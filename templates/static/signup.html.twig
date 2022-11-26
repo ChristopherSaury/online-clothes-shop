@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Lassap shop - Sign Up{% endblock %}
+{% block stylesheets %} <link rel="stylesheet" href="{{asset('css/signup.css')}}"> {% endblock %}
+
+{% block style %}
+<style>
+    #signup .page-photo{
+        width: 100%;
+        height: 100%;
+        background: url("{{asset('img/signup-page.jpg')}}");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<section id="signup">
+    <div class="page-photo"></div>
+    <div class="signup-form">
+        <form action="#" method="POST">
+            <h2>Your account</h2>
+            <h1>Create an account on Lassap.co.uk</h1>
+
+            <div class="first-row">
+                <div class="mail-input">
+                    <label for="email_address">Email*</label>
+                    <input type="email" id="email_address" name="email_address" placeholder="Your Email">
+                </div>
+            </div>
+
+            <div class="second-row">
+                <div class="password-input">
+                    <label for="password">Password*</label>
+                    <input type="password" id="password" name="password" placeholder="Your Password">
+                </div>
+                <div class="password2-input">
+                    <label for="password2">Confirm Password*</label>
+                    <input type="password" id="password2" name="password2" placeholder="Confirm Password">
+                </div>
+            </div>
+
+            <div class="third-row">
+                <div class="lastname-input">
+                    <label for="lastname">Lastname*</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Your Lastname">
+                </div>
+                <div class="firstname-input">
+                    <label for="firstname">Firstname*</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Your Firstname">
+                </div>
+            </div>
+
+            <div class="fourth-row">
+                <div class="country-input">
+                    <label for="country">Country*</label>
+                    <select name="country" id="country">
+                        <option value="">--Country of residence--</option>
+                        <option class="continent-option" value="" disabled>Africa</option>
+                        <!-- <?php foreach($african_continent as $africa_country): ?>
+                            <option value="<?php echo $africa_country->id ?>"><?php echo $africa_country->name ?></option>
+                        <?php endforeach; ?>
+
+                        <option class="continent-option" value="" disabled>Amérique</option>
+                        <?php foreach($american_continent as $america_country): ?>
+                            <option value="<?php echo $america_country->id ?>"><?php echo $america_country->name ?></option>
+                        <?php endforeach; ?>
+
+                        <option class="continent-option" value="" disabled>Asie</option>
+                        <?php foreach($asian_continent as $asia_country): ?>
+                            <option value="<?php echo $asia_country->id ?>"><?php echo $asia_country->name ?></option>
+                        <?php endforeach; ?>
+                        
+                        <option class="continent-option" value="" disabled>Europe</option>
+                        <?php foreach($european_continent as $europe_country): ?>
+                            <option value="<?php echo $europe_country->id ?>"><?php echo $europe_country->name ?></option>
+                        <?php endforeach; ?>
+
+                        <option class="continent-option" value="" disabled>Océanie</option>
+                        <?php foreach($oceanian_continent as $oceania_country): ?>
+                            <option value="<?php echo $oceania_country->id ?>"><?php echo $oceania_country->name ?></option>
+                        <?php endforeach; ?> -->
+                    </select>
+                    
+                </div>
+            </div>
+
+            <div class="fifth-row">
+                <div class="address-input">
+                    <label for="address">Address*</label>
+                    <input type="text" id="address" name="address" placeholder="Your Address">
+                </div>
+            </div>
+
+            <div class="sixth-row">
+                <div class="building-loor-input">
+                    <label for="building_floor">Building/Floor</label>
+                    <input type="text" id="building_floor" name="building_floor" placeholder="Your Building/Floor">
+                </div>
+            </div>
+
+            <div class="seventh-row">
+                <div class="city-input">
+                    <label for="city">City*</label>
+                    <input type="text" id="city" name="city" placeholder="City">
+                </div>
+                <div class="postcode-input">
+                    <label for="postcode">Post Code*</label>
+                    <input type="number" id="postcode" name="postcode" placeholder="Your Post Code">
+                </div>
+            </div>
+
+            <div class="eighth-row">
+                <div class="phone-input">
+                    <label for="phone">Phone*</label>
+                    <input type="number" id="phone" name="phone" placeholder="Your Phone number">
+                </div>
+                <div class="birth-input">
+                <label for="birth_date">Birth date*</label>
+                    <input type="date" id="birth_date" name="birth_date" placeholder="Your Birth Date">
+                </div>
+            </div>
+            <div class="btn-wrapper">
+                <button type="submit">Sign Up</button>
+                <div class="use-terms-wrapper">
+                    <input type="checkbox" name="" id="">
+                    <label for="">I have read and accept the conditions of use of my personal data.</label>
+                </div>
+                <div class="login-link">
+                  <p>Already have an account ? <a href="{{path('login')}}">Log in</a></p>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

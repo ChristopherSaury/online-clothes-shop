@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap');
+#login{
+    margin-top: 110px;
+    width: 100%;
+    height: 140vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+}
+
+#login .login-form{
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    height: 140vh;
+}
+
+#login .login-form form{
+    margin-top: 30%;
+    width: 400px;
+    height: auto;
+}
+#login .login-form h1{
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 2%;
+}
+
+#login .login-form .input-container{
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+#login .login-form .input-container .login-email,
+#login .login-form .input-container .login-password
+{
+    width: 80%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+#login .login-form .input-container div input{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 12px;
+    padding: 8px 8px;
+    border-radius: 0;
+    border: 1px solid #000;
+}
+#login .login-form .input-container div input:focus{
+    outline-color: transparent;
+}
+#login .login-form .input-container div label{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 14px;
+}
+#login .login-form .input-container .btn-wrapper{
+    width: 80%;
+    height: 100px;
+}
+#login .login-form .input-container .btn-wrapper button{
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    border-radius: 0;
+    border: 0;
+    color: #fff;
+    background-color: #28292b;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+#login .login-form .input-container .btn-wrapper .forgot-psw{
+    margin-top: 10px;
+    color: rgb(60, 60, 243);
+}
+#login .login-form .input-container .btn-wrapper a,
+#login .login-form .input-container .btn-wrapper p{
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+#login .login-form .input-container .btn-wrapper a:hover{
+    text-decoration: underline;
+}
+#login .login-form .input-container .btn-wrapper .new-account{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+#login .login-form .input-container .btn-wrapper .new-account a{
+    padding: 0;
+    color: rgb(60, 60, 243);
+}

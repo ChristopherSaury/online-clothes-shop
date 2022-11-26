@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Lassap shop - Home  {% endblock %}
+{% block stylesheets %} <link rel="stylesheet" href="{{asset('css/home.css')}}"> {% endblock %}
+{% block style %}
+<style>
+    .container .a-shoes-link{
+        position: relative;
+        width: 50%;
+        height: 100%;
+        background-image: url("{{asset('img/shoes.jpg')}}");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .container .a-clothes-link{
+        position: relative;
+        width: 50%;
+        height: 100%;
+        background-image: url("{{asset('img/clothes.jpg')}}");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="a-title-screen-ct">
+    <div class="container">
+        <div class="a-shoes-link">
+            <a href="#">Shoes Shop</a>
+        </div>
+        <div class="a-clothes-link">
+            <a href="#">Clothes Shop</a>
+        </div>
+    </div>
+    <div class="title-container">
+        <h1 class="a-title">Fashion at the best prices</h1>
+        <h3>+ new jacket collection to discover</h3>
+    </div>
+</div>
+<section id="homeAdd">
+    <div class="homePurchase">
+        <div>
+            <i class="fa-solid fa-percent"></i>
+            <h3>10% off an order</h3>
+            <p>10% discount on an order for a subscription to the newsletter</p>
+        </div>
+        <div>
+            <i class="fa-solid fa-globe"></i>
+            <h3>Free Shipping </h3>
+            <p>Shipping is free for all orders over 70€ worldwide</p>
+        </div>
+        <div>
+            <i class="fa-regular fa-money-bill-1"></i>
+            <h3>Buy now pay later</h3>
+            <p>Payment in 3 times or 1 month after the order</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

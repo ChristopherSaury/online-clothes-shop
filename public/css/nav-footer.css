@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
+/************************* SIGNUP & LOGIN ***************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#desktop{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+#datetime{
+    padding: 0 5%;
+    width: 100%;
+    height: 40px;
+    background-color: #343434;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#datetime .date-content i{
+    font-size: 12px;
+    margin: 0 5px 0 0;
+}
+#datetime .date-content{
+    width: 100%;
+    height: 100%;
+    font-family: 'Gentium Book Plus', serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#datetime .date-content div{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 5px;
+}
+#datetime .social-media{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+#datetime .social-media i{
+    font-size: 12px;
+}
+#datetime .social-media .social-container{
+    width: 26px;
+    height: 26px;
+    border: solid 2px #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3px;
+    cursor: pointer;
+}
+#datetime .social-media .social-container:hover{
+    color: #343434;
+    background-color: #fff;
+}
+#datetime .menu{
+    width: 30px;
+    height: 100%;
+    margin: 2%;
+    display: grid;
+    place-items: center;
+}
+#datetime .menu i{
+    font-size: 22px;
+    cursor: pointer;
+}
+#desktop .desk-nav{
+    width: 100%;
+    height: 70px;
+    display: grid;
+    box-shadow: 0px 5px 5px #343434;
+    background-color: #fff;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+#desktop .desk-nav ul, a{
+    cursor: pointer;
+    list-style-type: none;
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+#logo-desktop{
+    width: 100px;
+    height: 55px;
+}
+#desktop .desk-nav .link-one{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#desktop .desk-nav .link-one a,
+#desktop .desk-nav .link-two a{
+    white-space: nowrap;
+    font-size: 22px;
+    font-family: 'Bebas Neue', cursive;
+}
+#desktop .desk-nav .link-one a:hover,
+#desktop .desk-nav .link-two a:hover{
+    color: rgb(172, 26, 26);
+}
+
+#desktop .desk-nav .logo-container{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#desktop .desk-nav .link-two{
+    display: flex;
+    justify-content: flex-start;
+}
+/********************************** NAVBAR OPTIONS LINKS *****************************************************/
+/********************************** CLOTHES LINK *************************************************************/
+#desktop .clothes-shop-link{
+    width: 100%;
+    height: 270px;
+    background-color: #f2f2f1;
+    display: none;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 0 5%;
+}
+#desktop .clothes-shop-link .additionnals-links{
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 50px;
+}
+#desktop .clothes-shop-link .additionnals-links .standard-options{
+    margin-top: 24px;
+}
+#desktop .clothes-shop-link ul{
+    list-style-type: none;
+    white-space: nowrap;
+    width: 100%;
+    height: 100px;
+    font-family: 'Gemunu Libre', sans-serif;
+}
+#desktop .clothes-shop-link ul a:hover{
+    text-decoration: underline;
+}
+#desktop .clothes-shop-link h4{
+    margin-bottom: 6px;
+    font-family: 'PT Sans', sans-serif;
+}
+#desktop .clothes-shop-link .collections-links{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: flex-end;
+    gap: 20px;
+}
+#desktop .clothes-shop-link .collections-links .img-content{
+    width: 200px;
+    height: 250px;
+}
+#desktop .clothes-shop-link .collections-links .img-content a{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#desktop .clothes-shop-link .collections-links .img-content a h5{
+    text-align: center;
+    font-size: 16px;
+    font-family: 'PT Sans', sans-serif;
+}
+#desktop .clothes-shop-link .collections-links img{
+    width: 200px;
+    height: 220px;
+}
+/*************************************** SHOES LINK ********************************************************/
+#desktop .shoes-shop-link{
+    width: 100%;
+    height: 270px;
+    background-color: #f2f2f1;
+    display: none;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 0 5%;
+}
+#desktop .shoes-shop-link .additionnals-links{
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 50px;
+}
+#desktop .shoes-shop-link .additionnals-links .standard-options{
+    margin-top: 24px;
+}
+#desktop .shoes-shop-link ul{
+    list-style-type: none;
+    white-space: nowrap;
+    width: 100%;
+    height: 100px;
+    font-family: 'Gemunu Libre', sans-serif;
+}
+#desktop .shoes-shop-link ul a:hover{
+    text-decoration: underline;
+}
+#desktop .shoes-shop-link h4{
+    margin-bottom: 6px;
+    font-family: 'PT Sans', sans-serif;
+}
+#desktop .shoes-shop-link .collections-links{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: flex-end;
+    gap: 20px;
+}
+#desktop .shoes-shop-link .collections-links .img-content{
+    width: 200px;
+    height: 250px;
+}
+#desktop .shoes-shop-link .collections-links .img-content a{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#desktop .shoes-shop-link .collections-links .img-content a h5{
+    text-align: center;
+    font-size: 16px;
+    font-family: 'PT Sans', sans-serif;
+}
+#desktop .shoes-shop-link .collections-links img{
+    width: 200px;
+    height: 220px;
+}
+
+
+
+
+
+
+
+
+/******************************************* FOOTER ******************************************************/
+/******************************************* FOOTER FIRST ROW ******************************************************/
+footer .first-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 1fr;
+    background-color: #303133;
+    width: 100%;
+    height: 200px;
+    color: #d6d8db;
+    padding: 2% 4%;
+    font-family: 'Asap Condensed', sans-serif;
+}
+footer .first-row .f-about p{
+    text-align: start;
+    font-weight: 400;
+}
+footer .first-row  h5{
+    text-align: start;
+    font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    margin-bottom: 2%;
+}
+footer .first-row .f-logo-container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+footer .first-row .f-logo-container img{
+    border: 2px solid rgb(234, 193, 29);
+}
+footer .f-nsl-form form input{
+    background-color: #4f5051;
+    border: 2px solid #E1E1E1;
+    color: #E1E1E1;
+    margin-top: 4%;
+    padding: 3%;
+    width: 60%;
+}
+footer .f-nsl-form form input:focus{
+    outline: none;
+}
+footer .f-nsl-form form button{
+    margin-left: 4px;
+    width: 30%;
+    padding: 3%;
+    border-radius: 0%;
+    border: 2px solid #fff;
+    cursor: pointer;
+
+}
+/******************************************* FOOTER NEWSLETTER *******************************************************/
+
+/******************************************* FOOTER SECOND ROW ******************************************************/
+footer .second-row{
+    background-color: #28292b;
+    color: #fff;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 5% 5% 1% 5%;
+    font-family: 'Asap Condensed', sans-serif;
+}
+footer .credit-row{
+    width: 100%;
+    height: 50px;
+    background-color: #28292b;
+    color: rgb(102, 104, 106);
+}
+footer .second-row h5{
+    font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    text-align: center;
+}
+/******************************************* SOCIAL **************************************************/
+footer .f-social{
+    width: 250px;
+    height: auto;
+}
+footer .f-social-media{
+    padding-top: 12%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+footer .f-social-media div{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(234, 193, 29);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+footer .f-social-media div:hover{
+    background-color: #884c30;
+}
+/*************************************** OPENING FOOTER **********************************************/
+footer .container-op{
+    width: 250px;
+    height: auto;
+    margin-top: 12%;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+footer .container-op .op-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+}
+/****************************************** FOOTER CONTACT ************************************/
+footer .f-contact-container{
+    width: 250px;
+    height: auto;
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 10%;
+}
+footer .f-contact-container .f-contact-row{
+    width: 100%;
+    height: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+footer .f-contact-container .i-container{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .f-contact-container .i-container i{
+    font-size: 18px;
+}
+footer .f-contact-container .ct-info{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+/**************************************** GALLERY *****************************************/
+footer .footer-gallery{
+    width: 250px;
+    height: auto;
+}
+footer .footer-gallery .gallery-container{
+    margin-top: 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+}
+footer .footer-gallery .gallery-container .gallery{
+    width: 80px;
+    height: 90px;
+}
+footer .footer-gallery .gallery-container .gallery a{
+    width: 80px;
+    height: 90px;
+}
+footer .footer-gallery .gallery img{
+    width: 90%;
+    height: 90%;
+    
+}
+/***************************************** MODAL ********************************************/
+
+footer .modal{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+}
+footer .modal.show{
+    display: initial;
+}
+footer .modal-content{
+    width: 60%;
+    margin: auto;
+    max-width: 1200px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+footer .modal-content img{
+    width: 100%;
+    height: 90%;
+}
+footer .modal .close{
+    color: white;
+    font-size: 32px;
+    position: fixed;
+    top: 10px;
+    right: 10%;
+    cursor: pointer;
+}
