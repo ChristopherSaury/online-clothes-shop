@@ -12,6 +12,16 @@
         background-size: 100% 100%;
         background-repeat: no-repeat;
     }
+    #signup form .errorSignUp{
+        width: calc(100% - 10px);
+        height: 50px;
+        color: #842029;
+        background-color: #f8d7da;
+        padding: 1rem 1rem;
+        margin-bottom: 5px;
+        border: 1px solid #f5c2c7;
+        border-radius: 0.25rem;
+    }
 </style>
 {% endblock %}
 
@@ -19,9 +29,12 @@
 <section id="signup">
     <div class="page-photo"></div>
     <div class="signup-form">
-        <form action="#" method="POST">
+        <form action="{{path('register_handler')}}" method="POST">
             <h2>Your account</h2>
             <h1>Create an account on Lassap.co.uk</h1>
+            {% for errorSignup in app.flashes('errorSignup') %}
+            <div class="errorSignUp">{{ errorSignup }}</div>
+            {% endfor %}
 
             <div class="first-row">
                 <div class="mail-input">
@@ -29,7 +42,6 @@
                     <input type="email" id="email_address" name="email_address" placeholder="Your Email">
                 </div>
             </div>
-
             <div class="second-row">
                 <div class="password-input">
                     <label for="password">Password*</label>
@@ -40,7 +52,6 @@
                     <input type="password" id="password2" name="password2" placeholder="Confirm Password">
                 </div>
             </div>
-
             <div class="third-row">
                 <div class="lastname-input">
                     <label for="lastname">Lastname*</label>
@@ -58,29 +69,26 @@
                     <select name="country" id="country">
                         <option value="">--Country of residence--</option>
                         <option class="continent-option" value="" disabled>Africa</option>
-                        <!-- <?php foreach($african_continent as $africa_country): ?>
-                            <option value="<?php echo $africa_country->id ?>"><?php echo $africa_country->name ?></option>
-                        <?php endforeach; ?>
-
-                        <option class="continent-option" value="" disabled>Amérique</option>
-                        <?php foreach($american_continent as $america_country): ?>
-                            <option value="<?php echo $america_country->id ?>"><?php echo $america_country->name ?></option>
-                        <?php endforeach; ?>
-
-                        <option class="continent-option" value="" disabled>Asie</option>
-                        <?php foreach($asian_continent as $asia_country): ?>
-                            <option value="<?php echo $asia_country->id ?>"><?php echo $asia_country->name ?></option>
-                        <?php endforeach; ?>
-                        
+                        {% for country in african_countries %}
+                        <option value="{{ country.id }}">{{ country.name }}</option>
+                        {% endfor %}
+                        <option class="continent-option" value="" disabled>America</option>
+                        {% for country in american_countries %}
+                        <option value="{{ country.id }}">{{ country.name }}</option>
+                        {% endfor %}
+                        <option class="continent-option" value="" disabled>Asia</option>
+                        {% for country in asian_countries %}
+                        <option value="{{ country.id }}">{{ country.name }}</option>
+                        {% endfor %}
                         <option class="continent-option" value="" disabled>Europe</option>
-                        <?php foreach($european_continent as $europe_country): ?>
-                            <option value="<?php echo $europe_country->id ?>"><?php echo $europe_country->name ?></option>
-                        <?php endforeach; ?>
+                        {% for country in european_countries %}
+                        <option value="{{ country.id }}">{{ country.name }}</option>
+                        {% endfor %}
+                        <option class="continent-option" value="" disabled>Oceania</option>
+                        {% for country in oceanian_countries %}
+                        <option value="{{ country.id }}">{{ country.name }}</option>
+                        {% endfor %}
 
-                        <option class="continent-option" value="" disabled>Océanie</option>
-                        <?php foreach($oceanian_continent as $oceania_country): ?>
-                            <option value="<?php echo $oceania_country->id ?>"><?php echo $oceania_country->name ?></option>
-                        <?php endforeach; ?> -->
                     </select>
                     
                 </div>
@@ -124,8 +132,8 @@
             <div class="btn-wrapper">
                 <button type="submit">Sign Up</button>
                 <div class="use-terms-wrapper">
-                    <input type="checkbox" name="" id="">
-                    <label for="">I have read and accept the conditions of use of my personal data.</label>
+                    <input type="checkbox" name="termsOfUse" id="termsOfUse">
+                    <label for="termsOfUse">I have read and accept the terms of use of my personal data.</label>
                 </div>
                 <div class="login-link">
                   <p>Already have an account ? <a href="{{path('login')}}">Log in</a></p>
