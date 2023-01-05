@@ -99,3 +99,20 @@
     padding: 0;
     color: rgb(60, 60, 243);
 }
+#login .login-form form .error-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+#login .login-form form .alert-danger{
+    padding: 0 2%;
+    width: 80%;
+    height: 50px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}

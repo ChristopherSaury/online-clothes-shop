@@ -18,16 +18,30 @@
 {% block body %}
 <section id="login">
     <div class="login-form">
-        <form action="#" method="POST">
+        <form method="POST">
             <h1>Log in to Lassap.co.uk</h1>
+
+            <div class="error-container">
+                {% if error %}
+                    <div class="alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+    
+                {% if app.user %}
+                    <div class="mb-3">
+                        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                {% endif %}
+            </div>
+
+
             <div class="input-container">
                 <div class="login-email">
-                    <label for="email_address">Email</label>
-                    <input type="email" name="email_address" id="email_address" placeholder="Your Email">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="Your Email" autocomplete="email" required autofocus>
                 </div>
                 <div class="login-password">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Your Password">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" name="password" id="inputPassword" placeholder="Your Password" autocomplete="current-password" required>
                 </div>
                 <div class="btn-wrapper">
                     <button type="submit">Log in</button>
@@ -35,6 +49,7 @@
                     <p class="new-account">You don't have an account ?  <a href="{{path('app_register')}}">Create an account</a></p>
                 </div>
             </div>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
         </form>
     </div>
     <div class="page-photo"></div>
