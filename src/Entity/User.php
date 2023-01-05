@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -32,6 +33,39 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
+    #[ORM\Column(length: 255)]
+    private ?string $firstname = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $lastname = null;
+
+    #[ORM\ManyToOne(inversedBy: 'users')]
+    private ?Country $country = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $address = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $building_floor = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $city = null;
+
+    #[ORM\Column]
+    private ?int $postcode = null;
+
+    #[ORM\Column]
+    private ?int $phone = null;
+
+    #[ORM\Column(length: 20)]
+    private  ?string $birthdate = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $creation_date = null;
+
+    #[ORM\Column]
+    private ?bool $termsOfUse = null;
 
     public function getId(): ?int
     {
@@ -111,6 +145,138 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
+
+    public function setFirstname(string $firstname): self
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(string $lastname): self
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    public function getCountry(): ?Country
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?Country $country): self
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(string $address): self
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    public function getBuildingFloor(): ?string
+    {
+        return $this->building_floor;
+    }
+
+    public function setBuildingFloor(?string $building_floor): self
+    {
+        $this->building_floor = $building_floor;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getPostcode(): ?int
+    {
+        return $this->postcode;
+    }
+
+    public function setPostcode(int $postcode): self
+    {
+        $this->postcode = $postcode;
+
+        return $this;
+    }
+
+    public function getPhone(): ?int
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(int $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getBirthdate(): ?string
+    {
+        return $this->birthdate;
+    }
+
+    public function setBirthdate(string $birthdate): self
+    {
+        $this->birthdate = $birthdate;
+
+        return $this;
+    }
+
+    public function getCreationDate(): ?\DateTimeInterface
+    {
+        return $this->creation_date;
+    }
+
+    public function setCreationDate(\DateTimeInterface $creation_date): self
+    {
+        $this->creation_date = $creation_date;
+
+        return $this;
+    }
+
+    public function isTermsOfUse(): ?bool
+    {
+        return $this->termsOfUse;
+    }
+
+    public function setTermsOfUse(bool $termsOfUse): self
+    {
+        $this->termsOfUse = $termsOfUse;
 
         return $this;
     }
