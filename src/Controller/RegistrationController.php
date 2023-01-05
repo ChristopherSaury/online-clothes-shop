@@ -81,7 +81,7 @@ class RegistrationController extends AbstractController
             );
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('home');
+            return new Response('user created successfully', 200);
         }
 
 

@@ -38,7 +38,18 @@ function signup(){
     xhttp.open('POST', '/signup/handler');
     xhttp.send(form_data);
 
-    
+    xhttp.onreadystatechange = function (){
+        if(xhttp.readyState == 4 && xhttp.status == 200){
+            document.querySelector('#signup #signupForm #signupSubmit').disabled = false;
+            document.querySelector('#signup #signupForm').reset();
+            if(errMsgContainer.style.display = 'flex'){
+                errMsgContainer.style.display = 'none'
+            }
+            document.querySelector('#signup #signupForm .signupSuccess .suSuccessMsg').innerHTML = 'Account created | check your inbox to confirm your address';
+            document.querySelector('#signup #signupForm .signupSuccess').style.display = 'flex';
+            return document.documentElement.scrollTop = 0 ;
+        }
+    }
 }
 
 function errorSignUpRedirect(message){
@@ -47,7 +58,9 @@ function errorSignUpRedirect(message){
     document.documentElement.scrollTop = 0 ;
     return errMsgContainer.style.display = 'flex';
 }
-
+function closeSuccessSignUp(){
+    document.querySelector('#signup #signupForm .signupSuccess').style.display = 'none';
+}
 function closeErrMsgSignUp(){
     return errMsgContainer.style.display = 'none';
 }
