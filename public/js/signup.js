@@ -47,7 +47,7 @@ function signup(){
             }
             document.querySelector('#signup #signupForm .signupSuccess .suSuccessMsg').innerHTML = 'Account created | check your inbox to confirm your address';
             document.querySelector('#signup #signupForm .signupSuccess').style.display = 'flex';
-            return document.documentElement.scrollTop = 0 ;
+            return document.documentElement.scrollTop = 0;
         }
     }
 }
