@@ -18,14 +18,27 @@
                 </div>
             </div>
             <div class="ct-form-container">
-                <form action="#" method="post">
-                    <input type="text" id="full_name" name="full_name" placeholder="Full Name*">
-                    <input type="text" id="email_sender" name="email_sender" placeholder="Email Address*">
-                    <input type="text" id="contact_subject" name="contact_subject" placeholder="Message Contact*">
-                    <textarea name="" id="" placeholder="Write a Message....."></textarea>
-                    <button class="ct-button" type="submit">Submit</button>
+                <form id="contact-form">
+                    <div class="errorContact">
+                        <p class="errorContactMsg"></p>
+                        <i title="close" onclick="closeContactErr()" class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div class="successContact">
+                        <p class="successContactMsg"></p>
+                        <i title="close" onclick="closeContactsuccess()" class="fa-solid fa-xmark"></i>
+                    </div>
+
+                    <input type="text" class="contact-data" id="full-name" name="full-name" placeholder="Full Name*">
+                    <input type="email" class="contact-data" id="email-sender" name="email-sender" placeholder="Email Address*">
+                    <input type="text" class="contact-data" id="contact-subject" name="contact-subject" placeholder="Message Subject*">
+                    <textarea name="contact-message" class="contact-data" id="contact-message" placeholder="Write a Message....."></textarea>
+                    <button class="ct-button" type="button" onclick="contactFormAction(); return false;">Submit</button>
                 </form>
             </div>
         </div>
     </section>
+{% endblock %}
+
+{% block js %}
+    <script src="{{asset('js/contact.js')}}"></script>
 {% endblock %}
