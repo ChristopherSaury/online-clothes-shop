@@ -39,6 +39,15 @@ class ClothesRepository extends ServiceEntityRepository
         }
     }
 
+    public function getAllHeadwear(ItemCategoryRepository $category){
+        $id = $category->getHeadwearCatId();
+        $query = $this->createQueryBuilder('c');
+        $query->andWhere('c.category IN(:cats)')
+        ->setParameter(':cats', array_values($id));
+        return $query->getQuery()->getResult();
+        //return $id;
+    }
+
 //    /**
 //     * @return Clothes[] Returns an array of Clothes objects
 //     */

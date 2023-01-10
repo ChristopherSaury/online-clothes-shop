@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\ClothesCategory;
+use App\Entity\Color;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<ClothesCategory>
+ * @extends ServiceEntityRepository<Color>
  *
- * @method ClothesCategory|null find($id, $lockMode = null, $lockVersion = null)
- * @method ClothesCategory|null findOneBy(array $criteria, array $orderBy = null)
- * @method ClothesCategory[]    findAll()
- * @method ClothesCategory[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Color|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Color|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Color[]    findAll()
+ * @method Color[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ClothesCategoryRepository extends ServiceEntityRepository
+class ColorRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, ClothesCategory::class);
+        parent::__construct($registry, Color::class);
     }
 
-    public function save(ClothesCategory $entity, bool $flush = false): void
+    public function save(Color $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class ClothesCategoryRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(ClothesCategory $entity, bool $flush = false): void
+    public function remove(Color $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class ClothesCategoryRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return ClothesCategory[] Returns an array of ClothesCategory objects
+//     * @return Color[] Returns an array of Color objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class ClothesCategoryRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?ClothesCategory
+//    public function findOneBySomeField($value): ?Color
 //    {
 //        return $this->createQueryBuilder('c')
 //            ->andWhere('c.exampleField = :val')

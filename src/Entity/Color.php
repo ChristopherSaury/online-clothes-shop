@@ -2,14 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ItemCollectionRepository;
+use App\Repository\ColorRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ItemCollectionRepository::class)]
-class ItemCollection
+#[ORM\Entity(repositoryClass: ColorRepository::class)]
+class Color
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -19,10 +18,7 @@ class ItemCollection
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 10)]
-    private ?string $year = null;
-
-    #[ORM\OneToMany(mappedBy: 'clothe_collection', targetEntity: Clothes::class)]
+    #[ORM\OneToMany(mappedBy: 'color', targetEntity: Clothes::class)]
     private Collection $clothes;
 
     public function __construct()
@@ -47,18 +43,6 @@ class ItemCollection
         return $this;
     }
 
-    public function getYear(): ?string
-    {
-        return $this->year;
-    }
-
-    public function setYear(string $year): self
-    {
-        $this->year = $year;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Clothes>
      */
@@ -71,7 +55,7 @@ class ItemCollection
     {
         if (!$this->clothes->contains($clothes)) {
             $this->clothes->add($clothes);
-            $clothes->setClotheCollection($this);
+            $clothes->setColor($this);
         }
 
         return $this;
@@ -81,8 +65,8 @@ class ItemCollection
     {
         if ($this->clothes->removeElement($clothes)) {
             // set the owning side to null (unless already changed)
-            if ($clothes->getClotheCollection() === $this) {
-                $clothes->setClotheCollection(null);
+            if ($clothes->getColor() === $this) {
+                $clothes->setColor(null);
             }
         }
 

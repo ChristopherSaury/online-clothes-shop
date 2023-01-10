@@ -26,13 +26,9 @@ class Clothes
 
     #[ORM\ManyToOne(inversedBy: 'clothes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?ClothesCategory $category = null;
-
-    #[ORM\ManyToOne(inversedBy: 'clothes')]
-    #[ORM\JoinColumn(nullable: false)]
     private ?Gender $gender = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: '0')]
+    #[ORM\Column(type: Types::FLOAT)]
     private ?string $price = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -40,6 +36,17 @@ class Clothes
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
+
+    #[ORM\ManyToOne(inversedBy: 'clothes')]
+    private ?ItemCategory $category = null;
+
+    #[ORM\ManyToOne(inversedBy: 'clothes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Size $size = null;
+
+    #[ORM\ManyToOne(inversedBy: 'clothes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Color $color = null;
 
     public function getId(): ?int
     {
@@ -78,18 +85,6 @@ class Clothes
     public function setClotheCollection(?ItemCollection $clothe_collection): self
     {
         $this->clothe_collection = $clothe_collection;
-
-        return $this;
-    }
-
-    public function getCategory(): ?ClothesCategory
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?ClothesCategory $category): self
-    {
-        $this->category = $category;
 
         return $this;
     }
@@ -138,6 +133,42 @@ class Clothes
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getCategory(): ?ItemCategory
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?ItemCategory $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getSize(): ?Size
+    {
+        return $this->size;
+    }
+
+    public function setSize(?Size $size): self
+    {
+        $this->size = $size;
+
+        return $this;
+    }
+
+    public function getColor(): ?Color
+    {
+        return $this->color;
+    }
+
+    public function setColor(?Color $color): self
+    {
+        $this->color = $color;
 
         return $this;
     }
