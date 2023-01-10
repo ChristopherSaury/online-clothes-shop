@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+#product{
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 110px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 4%;
+}
+#product .product-title{
+    margin-top: 2%;
+    font-size: 50px;
+    font-family: 'Bakbak One', cursive;
+}
+#product .product-section{
+    width: 100%;
+    height: auto;
+    padding: 0 8%;
+    margin-top: 2%;
+}
+#product .product-menu{
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+#product .product-menu .product-option{
+    width: 50px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    cursor: pointer;
+}
+#product .product-menu .product-option p{
+    font-size: 18px;
+    font-family: 'Nanum Myeongjo', serif;
+}
+#product .product-menu .menu-first-options{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+#product .product-section #category-menu{
+    display: none;
+    position: absolute;
+    left: 9%;
+    bottom: 36%;
+    background-color: #fff;
+    list-style-type: none;
+    padding-top: 12px;
+    padding-left: 5px;
+    width: 200px;
+    height: auto;
+    border: 1px solid rgb(65, 64, 64);
+    z-index: 999;
+}
+#product .product-section #color-menu{
+    display: none;
+    position: absolute;
+    left: 15%;
+    bottom: 23%;
+    background-color: #fff;
+    list-style-type: none;
+    padding-top: 12px;
+    padding-left: 5px;
+    width: 200px;
+    height: auto;
+    border: 1px solid rgb(65, 64, 64);
+    z-index: 999;
+}
+#product .product-section .filter-selection label{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#product .product-section .filter-selection input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+#product .product-section .filter-selection .checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+#product .product-section .filter-selection label:hover  input ~ .checkmark{
+    background-color: #ccc;
+}
+#product .product-section .filter-selection label input:checked ~ .checkmark{
+    background-color: #2196F3;
+}
+#product .product-section .filter-selection .checkmark::after{
+    content: "";
+    position: absolute;
+    display: none;
+}
+#product .product-section .filter-selection input:checked ~ .checkmark:after{
+    display: block;
+}
+#product .product-section .filter-selection .checkmark:after{
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#product .product-section .menu-first-options #product-option{
+    rotate: 0deg;
+}
+#product .product-container{
+    width: 100%;
+    height: auto;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+#product .product-container .product-card{
+    width: 250px;
+    height: 450px;
+}
+#product .product-container .product-card img{
+    width: 250px;
+    height: 350px;
+}
