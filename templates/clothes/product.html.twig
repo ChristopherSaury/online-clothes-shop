@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product_name }} - Lassap Shop{% endblock %}
+
+{% block stylesheets %} <link rel="stylesheet" href="{{asset('css/clothes.css')}}"> {% endblock %}
+
+{% block body %}
+    <section id="product">
+        <h1 class="product-title">{{ product_name }}</h1>
+        <div class="product-section">
+            <div class="product-menu">
+                <div class="menu-first-options">
+                    <span onclick="toogleCategory()" id="category-option" class="product-option"><p>Type</p><i id="arrCat" class="fa-solid fa-sort-down"></i></span>
+                    <span onclick="toggleColorMenu()" id="color-option" class="product-option"><p>Color</p> <i id="arrCol" class="fa-solid fa-sort-down"></i></span>
+                </div>
+                <div class="menu-second-option">
+                    <span class="product-option"><p>Sort</p><i class="fa-solid fa-sort-down"></i></span>
+                </div>
+            </div>
+            <ul id="category-menu">
+                {% for item_category in categories %}
+                <li class="filter-selection">
+                    <label>
+                        {{ item_category.name }}
+                        <input type="checkbox" name="{{item_category.name}}" id="{{item_category.id}}">
+                        <span class="checkmark"></span>
+                    </label>
+                </li>
+                {% endfor %}
+            </ul>
+            <ul id="color-menu">
+                {% for item_colors in color %}
+                <li class="filter-selection">
+                    <label>
+                        {{ item_colors.name }}
+                        <input type="checkbox" name="{{item_colors.name}}" id="{{item_colors.id}}">
+                        <span class="checkmark"></span>
+                    </label>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="product-container">
+                {% for key, value in product %}
+                <a href="#">
+                    <div class="product-card">
+                        <img src="{{asset('img')}}/{{ value.image }}" alt="{{ value.model }}">
+                        <div class="product-info">
+                            <p>
+                                {{value.model}}
+                            </p>
+                            <p>
+                                £{{ value.price }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block js %}
+    {% if product_name == 'Headwear' %}
+        <script src="{{asset('js/headwear.js')}}"></script>
+    {% endif %}
+{% endblock %}
