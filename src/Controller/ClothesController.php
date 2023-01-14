@@ -3,28 +3,37 @@
 namespace App\Controller;
 
 use App\Entity\ItemType;
-use App\Repository\ClothesRepository;
-use App\Repository\ColorRepository;
-use App\Repository\ItemCategoryRepository;
-use App\Repository\ItemTypeRepository;
 use App\Repository\SizeRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\ColorRepository;
+use App\Repository\ClothesRepository;
+use App\Repository\ItemTypeRepository;
+use App\Repository\ItemCategoryRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ClothesController extends AbstractController
 {
     #[Route('/clothes/headwear', name: 'clothes_headwear')]
-    public function displayHeadwear(ColorRepository $color, ItemCategoryRepository $categorie, ClothesRepository $clothes): Response
+    public function displayHeadwear(ColorRepository $color, ItemCategoryRepository $categorie, ClothesRepository $clothes, Request $request): Response
     {
         //dd($clothes->getAllHeadwear($categorie));
-        return $this->render('clothes/product.html.twig', [
-            'controller_name' => 'ClothesController',
-            'product_name' => 'Headwear',
-            'color' => $color->findAll(),
-            'categories' => $categorie->findBy(array('type' => 1)),
-            'product' => $clothes->getAllHeadwear($categorie)
-            
-        ]);
+        $product_name = 'Headwear';
+        $colors = $color->findAll();
+        $categories = $categorie->findBy(array('type' => 1));
+        $filter_colors = $request->get('colors');
+        $filter_category = $request->get('category');
+        $filter_sort = $request->get('sort'); 
+        $product = $clothes->getAllHeadwear($categorie, $filter_colors, $filter_category, $filter_sort);
+
+        if($request->get('ajax')){
+            return new JsonResponse([
+                'content' => $this->renderView('clothes/content.html.twig', compact('product'))
+            ]);
+        }
+
+        return $this->render('clothes/product.html.twig', compact('product_name', 'colors', 'categories', 'product'));
     }
 }

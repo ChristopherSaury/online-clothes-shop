@@ -8,60 +8,79 @@
     <section id="product">
         <h1 class="product-title">{{ product_name }}</h1>
         <div class="product-section">
+        <form id="clothesFilter">
             <div class="product-menu">
                 <div class="menu-first-options">
-                    <span onclick="toogleCategory()" id="category-option" class="product-option"><p>Type</p><i id="arrCat" class="fa-solid fa-sort-down"></i></span>
-                    <span onclick="toggleColorMenu()" id="color-option" class="product-option"><p>Color</p> <i id="arrCol" class="fa-solid fa-sort-down"></i></span>
+                    <span onclick="toggleFilterMenu(this, 'category-menu')" id="category-option" class="product-option"><p>Type</p><i id="arrCat" class="fa-solid fa-sort-down"></i></span>
+                    <span onclick="toggleFilterMenu(this, 'color-menu')" id="color-option" class="product-option"><p>Color</p> <i id="arrCol" class="fa-solid fa-sort-down"></i></span>
                 </div>
                 <div class="menu-second-option">
-                    <span class="product-option"><p>Sort</p><i class="fa-solid fa-sort-down"></i></span>
+                    <span onclick="toggleFilterMenu(this, 'sort-menu')" id="sort-option" class="product-option"><p>Sort</p><i id="arrSort" class="fa-solid fa-sort-down"></i></span>
                 </div>
             </div>
-            <ul id="category-menu">
+            <ul class="sort-menu" id="sort-menu">
+                <li class="filter-selection">
+                    <label for="sort-alphabetically-AZ">
+                        Alphabetically, A-Z
+                        <input onclick="sortCheckbox(this)" type="checkbox" class="sortInput" name="sort" id="sort-alphabetically-AZ" value="AtoZ">
+                        <span class="checkmark"></span>
+                    </label>
+                </li>
+                <li class="filter-selection">
+                    <label for="sort-alphabetically-ZA">
+                        Alphabetically, Z-A
+                        <input onclick="sortCheckbox(this)" type="checkbox" class="sortInput" name="sort" id="sort-alphabetically-ZA" value="ZtoA">
+                        <span class="checkmark"></span>
+                    </label>
+                </li>
+                <li class="filter-selection">
+                    <label for="sort-price-LtoH">
+                        Price, Low to High
+                        <input onclick="sortCheckbox(this)" type="checkbox" class="sortInput" name="sort" id="sort-price-LtoH" value="LowToHigh">
+                        <span class="checkmark"></span>
+                    </label>
+                </li>
+                <li class="filter-selection">
+                    <label for="sort-price-HtoL">
+                        Price, High to Low
+                        <input onclick="sortCheckbox(this)" type="checkbox" class="sortInput" name="sort" id="sort-price-HtoL" value="HighToLow">
+                        <span class="checkmark"></span>
+                    </label>
+                </li>
+            </ul>
+            <ul class="category-menu" id="category-menu">
                 {% for item_category in categories %}
                 <li class="filter-selection">
-                    <label>
+                    <label for="cat{{item_category.id}}">
                         {{ item_category.name }}
-                        <input type="checkbox" name="{{item_category.name}}" id="{{item_category.id}}">
+                        <input type="checkbox" name="category[]" id="cat{{item_category.id}}" value="{{item_category.id}}">
                         <span class="checkmark"></span>
                     </label>
                 </li>
                 {% endfor %}
             </ul>
-            <ul id="color-menu">
-                {% for item_colors in color %}
+            <ul class="color-menu" id="color-menu">
+                {% for item_colors in colors %}
                 <li class="filter-selection">
-                    <label>
+                    <label for="col{{item_colors.id}}">
                         {{ item_colors.name }}
-                        <input type="checkbox" name="{{item_colors.name}}" id="{{item_colors.id}}">
+                        <input type="checkbox" name="colors[]" id="col{{item_colors.id}}" value="{{item_colors.id}}">
                         <span class="checkmark"></span>
                     </label>
                 </li>
                 {% endfor %}
             </ul>
-            <div class="product-container">
-                {% for key, value in product %}
-                <a href="#">
-                    <div class="product-card">
-                        <img src="{{asset('img')}}/{{ value.image }}" alt="{{ value.model }}">
-                        <div class="product-info">
-                            <p>
-                                {{value.model}}
-                            </p>
-                            <p>
-                                £{{ value.price }}
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                {% endfor %}
-            </div>
+        </form>
+        <div id="content">
+            {% include 'clothes/content.html.twig' %}
+        </div>
         </div>
     </section>
 {% endblock %}
 
 {% block js %}
     {% if product_name == 'Headwear' %}
-        <script src="{{asset('js/headwear.js')}}"></script>
+        <script src="{{asset('js/clothes-menu.js')}}"></script>
     {% endif %}
+    <script src="{{asset('js/clothes-filter.js')}}"></script>
 {% endblock %}

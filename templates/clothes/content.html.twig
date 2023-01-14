@@ -1,0 +1,17 @@
+<div class="product-selection">
+    {% for key, value in product %}
+    <a href="#">
+        <div class="product-card">
+            <img src="{{asset('img')}}/{{ value.image }}" alt="{{ value.model }}">
+            <div class="product-info">
+                <p class="product-model">
+                    {{value.model}}
+                </p>
+                <p>
+                    £{{ value.price }}
+                </p>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>

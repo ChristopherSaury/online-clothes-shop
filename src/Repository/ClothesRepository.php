@@ -39,13 +39,33 @@ class ClothesRepository extends ServiceEntityRepository
         }
     }
 
-    public function getAllHeadwear(ItemCategoryRepository $category){
+    public function getAllHeadwear(ItemCategoryRepository $category, $filter_colors = null,
+    $filter_category = null, $filter_sort = null){
         $id = $category->getHeadwearCatId();
         $query = $this->createQueryBuilder('c');
-        $query->andWhere('c.category IN(:cats)')
-        ->setParameter(':cats', array_values($id));
+        if($filter_category !== null){
+            $query->andWhere('c.category IN(:cats)')
+            ->setParameter(':cats', array_values($filter_category));
+        }else{
+            $query->andWhere('c.category IN(:cats)')
+            ->setParameter(':cats', array_values($id));
+        }
+
+        if($filter_colors !== null){
+            $query->andWhere('c.color IN(:col)')
+            ->setParameter(':col', array_values($filter_colors));
+        }
+
+        if($filter_sort == 'LowToHigh'){
+            $query->orderBy('c.price', 'ASC');
+        }elseif($filter_sort == 'HighToLow'){
+            $query->orderBy('c.price', 'DESC');
+        }elseif($filter_sort == 'AtoZ'){
+            $query->orderBy('c.model', 'ASC');
+        }elseif($filter_sort == 'ZtoA'){
+            $query->orderBy('c.model', 'DESC');
+        }
         return $query->getQuery()->getResult();
-        //return $id;
     }
 
 //    /**

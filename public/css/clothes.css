@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300&display=swap');
 #product{
     width: 100%;
     min-height: 100vh;
@@ -55,7 +57,7 @@
     display: none;
     position: absolute;
     left: 9%;
-    bottom: 36%;
+    top: 49%;
     background-color: #fff;
     list-style-type: none;
     padding-top: 12px;
@@ -63,13 +65,13 @@
     width: 200px;
     height: auto;
     border: 1px solid rgb(65, 64, 64);
-    z-index: 999;
+    z-index: 997;
 }
 #product .product-section #color-menu{
     display: none;
     position: absolute;
     left: 15%;
-    bottom: 23%;
+    top: 49%;
     background-color: #fff;
     list-style-type: none;
     padding-top: 12px;
@@ -77,7 +79,21 @@
     width: 200px;
     height: auto;
     border: 1px solid rgb(65, 64, 64);
-    z-index: 999;
+    z-index: 997;
+}
+#product .product-section #sort-menu{
+    display: none;
+    position: absolute;
+    right: 8%;
+    top: 49%;
+    background-color: #fff;
+    list-style-type: none;
+    padding-top: 12px;
+    padding-left: 5px;
+    width: 250px;
+    height: auto;
+    border: 1px solid rgb(65, 64, 64);
+    z-index: 997;
 }
 #product .product-section .filter-selection label{
     display: block;
@@ -86,6 +102,7 @@
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 22px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -104,10 +121,10 @@
     left: 0;
     height: 25px;
     width: 25px;
-    background-color: #eee;
+    background-color: rgb(140, 137, 137);
 }
 #product .product-section .filter-selection label:hover  input ~ .checkmark{
-    background-color: #ccc;
+    background-color: rgb(95, 89, 89);
 }
 #product .product-section .filter-selection label input:checked ~ .checkmark{
     background-color: #2196F3;
@@ -134,7 +151,10 @@
 #product .product-section .menu-first-options #product-option{
     rotate: 0deg;
 }
-#product .product-container{
+#product ul{
+    list-style-type: none;
+}
+#product .product-selection{
     width: 100%;
     height: auto;
     margin-top: 2%;
@@ -143,11 +163,15 @@
     flex-wrap: wrap;
     gap: 15px;
 }
-#product .product-container .product-card{
+#product .product-selection .product-card{
     width: 250px;
-    height: 450px;
+    height: 420px;
 }
-#product .product-container .product-card img{
+#product .product-selection .product-card .product-model{
+    font-family: 'PT Sans', sans-serif;
+    margin: 2% 0 2% 0;
+}
+#product .product-selection .product-card img{
     width: 250px;
     height: 350px;
 }
