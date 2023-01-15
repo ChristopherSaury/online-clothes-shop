@@ -39,9 +39,9 @@ class ClothesRepository extends ServiceEntityRepository
         }
     }
 
-    public function getAllHeadwear(ItemCategoryRepository $category, $filter_colors = null,
+    public function getAllClothes(ItemCategoryRepository $category, $category_id, $filter_colors = null,
     $filter_category = null, $filter_sort = null){
-        $id = $category->getHeadwearCatId();
+        $id = $category->getClothesCatId($category_id);
         $query = $this->createQueryBuilder('c');
         if($filter_category !== null){
             $query->andWhere('c.category IN(:cats)')
@@ -66,6 +66,16 @@ class ClothesRepository extends ServiceEntityRepository
             $query->orderBy('c.model', 'DESC');
         }
         return $query->getQuery()->getResult();
+    }
+
+    public function getAllTshirts(ItemCategoryRepository $category){
+        $id = $category->getClothesCatId(2);
+        $query = $this->createQueryBuilder('c');
+        $query->andWhere('c.category IN(:cats)')
+        ->setParameter(':cats', array_values($id));
+
+        return $query->getQuery()->getResult();
+
     }
 
 //    /**

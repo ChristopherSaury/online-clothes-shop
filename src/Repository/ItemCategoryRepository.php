@@ -39,18 +39,19 @@ class ItemCategoryRepository extends ServiceEntityRepository
         }
     }
 
-    public function getHeadwearCatId(){
-        $headwear = [];
+    public function getClothesCatId($id){
+        $product_item = [];
         $em = $this->getEntityManager();
         $query = $em->createQuery('
         SELECT c
         FROM App\Entity\ItemCategory c
-        WHERE c.type = 1
-        ');
+        WHERE c.type = :id
+        ')
+        ->setParameter(':id', $id);
         foreach ($query->getResult() as $key => $value){
-            $headwear[] = $value->getId();
+            $product_item[] = $value->getId();
         }
-        return $headwear;
+        return $product_item;
     }
 
 //    /**
