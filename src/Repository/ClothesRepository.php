@@ -68,11 +68,30 @@ class ClothesRepository extends ServiceEntityRepository
         return $query->getQuery()->getResult();
     }
 
-    public function getAllTshirts(ItemCategoryRepository $category){
-        $id = $category->getClothesCatId(2);
+    public function getAllSeasonClothes($season, $filter_colors, $filter_sort, $filter_category){
         $query = $this->createQueryBuilder('c');
-        $query->andWhere('c.category IN(:cats)')
-        ->setParameter(':cats', array_values($id));
+        $query->where('c.clothe_collection = :season')
+        ->setParameter(':season', $season);
+
+        if($filter_category !== null){
+            $query->andWhere('c.category IN(:cats)')
+            ->setParameter(':cats', array_values($filter_category));
+        }
+
+        if($filter_colors !== null){
+            $query->andWhere('c.color IN(:col)')
+            ->setParameter(':col', array_values($filter_colors));
+        }
+
+        if($filter_sort == 'LowToHigh'){
+            $query->orderBy('c.price', 'ASC');
+        }elseif($filter_sort == 'HighToLow'){
+            $query->orderBy('c.price', 'DESC');
+        }elseif($filter_sort == 'AtoZ'){
+            $query->orderBy('c.model', 'ASC');
+        }elseif($filter_sort == 'ZtoA'){
+            $query->orderBy('c.model', 'DESC');
+        }
 
         return $query->getQuery()->getResult();
 

@@ -80,35 +80,35 @@
                             <li><a href="{{path('clothes_headwear')}}">Headwear</a></li>
                             <li><a href="{{path('clothes_tshirt')}}">T-shirt</a></li>
                             <li><a href="{{path('clothes_bottoms')}}">Bottoms</a></li>
-                            <li><a href="#">Sweatshirt</a></li>
+                            <li><a href="{{path('clothes_sweatshirt')}}">Sweatshirt</a></li>
                         </ul>
                     </div>
                     <div class="collections">
                         <h4>Collections</h4>
                         <ul>
-                            <li><a href="#">Fall 2023</a></li>
-                            <li><a href="#">Spring / Summer 2023</a></li>
-                            <li><a href="#">Winter 2023</a></li>
+                            <li><a href="{{path('clothes_collection', {season : 2})}}">Fall 2023</a></li>
+                            <li><a href="{{path('clothes_collection', {season : 3})}}">Spring / Summer 2023</a></li>
+                            <li><a href="{{path('clothes_collection', {season : 4})}}">Winter 2023</a></li>
                         </ul>
                     </div>
                 </div>
         
                 <div class="collections-links">
                     <div class="img-content">
-                        <a href="#">
-                            <img src="{{asset('img/spring-2022.jpg')}}" alt="woman clothing model for 2022 spring collection">
-                            <h5>Spring 2023</h5>
+                        <a href="{{path('clothes_collection', {season : 2})}}">
+                            <img src="{{asset('img/fall-collection.jpg')}}" alt="woman clothing model for 2023 Fall collection">
+                            <h5>Fall 2023</h5>
                         </a>
                     </div>
                     <div class="img-content">
-                        <a href="#">
-                            <img src="{{asset('img/summer-2022.jpg')}}" alt="woman clothing model for 2022 summer collection">
-                            <h5>Summer 2023</h5>
+                        <a href="{{path('clothes_collection', {season : 3})}}">
+                            <img src="{{asset('img/summer-2022.jpg')}}" alt="woman clothing model for 2023 spring and summer collection">
+                            <h5>Spring/Summer 2023</h5>
                         </a>
                     </div>
                     <div class="img-content">
-                        <a href="#">
-                            <img src="{{asset('img/winter-2022.jpg')}}" alt="Man clothing model for 2022 winter collection">
+                        <a href="{{path('clothes_collection', {season : 4})}}">
+                            <img src="{{asset('img/winter-2022.jpg')}}" alt="Man clothing model for 2023 winter collection">
                             <h5>Winter 2023</h5>
                         </a>
                     </div>

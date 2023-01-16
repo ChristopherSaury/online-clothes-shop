@@ -40,9 +40,8 @@ class Clothes
     #[ORM\ManyToOne(inversedBy: 'clothes')]
     private ?ItemCategory $category = null;
 
-    #[ORM\ManyToOne(inversedBy: 'clothes')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Size $size = null;
+    #[ORM\Column(length:10, nullable: true)]
+    private ?string $size = null;
 
     #[ORM\ManyToOne(inversedBy: 'clothes')]
     #[ORM\JoinColumn(nullable: false)]
@@ -149,12 +148,12 @@ class Clothes
         return $this;
     }
 
-    public function getSize(): ?Size
+    public function getSize(): ?string
     {
         return $this->size;
     }
 
-    public function setSize(?Size $size): self
+    public function setSize(?string $size): self
     {
         $this->size = $size;
 
