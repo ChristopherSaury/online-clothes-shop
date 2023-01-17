@@ -24,9 +24,13 @@ class ItemCategory
     #[ORM\OneToMany(mappedBy: 'category', targetEntity: Clothes::class)]
     private Collection $clothes;
 
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Shoes::class)]
+    private Collection $shoes;
+
     public function __construct()
     {
         $this->clothes = new ArrayCollection();
+        $this->shoes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -82,6 +86,36 @@ class ItemCategory
             // set the owning side to null (unless already changed)
             if ($clothes->getCategory() === $this) {
                 $clothes->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Shoes>
+     */
+    public function getShoes(): Collection
+    {
+        return $this->shoes;
+    }
+
+    public function addShoe(Shoes $shoe): self
+    {
+        if (!$this->shoes->contains($shoe)) {
+            $this->shoes->add($shoe);
+            $shoe->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeShoe(Shoes $shoe): self
+    {
+        if ($this->shoes->removeElement($shoe)) {
+            // set the owning side to null (unless already changed)
+            if ($shoe->getCategory() === $this) {
+                $shoe->setCategory(null);
             }
         }
 

@@ -21,9 +21,13 @@ class Gender
     #[ORM\OneToMany(mappedBy: 'gender', targetEntity: Clothes::class)]
     private Collection $clothes;
 
+    #[ORM\OneToMany(mappedBy: 'gender', targetEntity: Shoes::class)]
+    private Collection $shoes;
+
     public function __construct()
     {
         $this->clothes = new ArrayCollection();
+        $this->shoes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -67,6 +71,36 @@ class Gender
             // set the owning side to null (unless already changed)
             if ($clothes->getGender() === $this) {
                 $clothes->setGender(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Shoes>
+     */
+    public function getShoes(): Collection
+    {
+        return $this->shoes;
+    }
+
+    public function addShoe(Shoes $shoe): self
+    {
+        if (!$this->shoes->contains($shoe)) {
+            $this->shoes->add($shoe);
+            $shoe->setGender($this);
+        }
+
+        return $this;
+    }
+
+    public function removeShoe(Shoes $shoe): self
+    {
+        if ($this->shoes->removeElement($shoe)) {
+            // set the owning side to null (unless already changed)
+            if ($shoe->getGender() === $this) {
+                $shoe->setGender(null);
             }
         }
 
