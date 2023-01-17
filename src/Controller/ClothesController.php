@@ -27,11 +27,11 @@ class ClothesController extends AbstractController
 
         if($request->get('ajax')){
             return new JsonResponse([
-                'content' => $this->renderView('clothes/content.html.twig', compact('product'))
+                'content' => $this->renderView('product/content.html.twig', compact('product'))
             ]);
         }
 
-        return $this->render('clothes/product.html.twig', compact('product_name', 'colors', 'categories', 'product'));
+        return $this->render('product/product.html.twig', compact('product_name', 'colors', 'categories', 'product'));
     }
 
     #[Route('/clothes/tshirt', name:'clothes_tshirt')]
@@ -47,11 +47,11 @@ class ClothesController extends AbstractController
 
         if($request->get('ajax')){
             return new JsonResponse([
-                'content' => $this->renderView('clothes/content.html.twig', compact('product'))
+                'content' => $this->renderView('product/content.html.twig', compact('product'))
             ]);
         }
 
-        return $this->render('clothes/product.html.twig', compact('product_name','colors', 'categories', 'product'));
+        return $this->render('product/product.html.twig', compact('product_name','colors', 'categories', 'product'));
     }
 
     #[Route('/clothes/sweatshirt', name:'clothes_sweatshirt')]
@@ -67,11 +67,11 @@ class ClothesController extends AbstractController
 
         if($request->get('ajax')){
             return new JsonResponse([
-                'content' => $this->renderView('clothes/content.html.twig', compact('product'))
+                'content' => $this->renderView('product/content.html.twig', compact('product'))
             ]);
         }
 
-        return $this->render('clothes/product.html.twig', compact('product_name','colors', 'categories', 'product'));
+        return $this->render('product/product.html.twig', compact('product_name','colors', 'categories', 'product'));
     }
 
 
@@ -88,11 +88,11 @@ class ClothesController extends AbstractController
 
         if($request->get('ajax')){
             return new JsonResponse([
-                'content' => $this->renderView('clothes/content.html.twig', compact('product'))
+                'content' => $this->renderView('product/content.html.twig', compact('product'))
             ]);
         }
 
-        return $this->render('clothes/product.html.twig', compact('product_name','colors', 'categories', 'product'));
+        return $this->render('product/product.html.twig', compact('product_name','colors', 'categories', 'product'));
     }
 
     #[Route('/clothes/collection/{season}', name:'clothes_collection')]
@@ -114,10 +114,10 @@ class ClothesController extends AbstractController
 
         if($request->get('ajax')){
             return new JsonResponse([
-                'content' => $this->renderView('clothes/content.html.twig', compact('product'))
+                'content' => $this->renderView('product/content.html.twig', compact('product'))
             ]);
         }
 
-        return $this->render('clothes/product.html.twig', compact('product_name','colors', 'categories', 'product'));
+        return $this->render('product/product.html.twig', compact('product_name','colors', 'categories', 'product'));
     }
 }
