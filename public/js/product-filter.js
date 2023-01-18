@@ -1,6 +1,6 @@
 window.onload = function(){
-    const filterForm = document.querySelector('#product #clothesFilter');
-    const inputForm = document.querySelectorAll('#product #clothesFilter input');
+    const filterForm = document.querySelector('#product #productFilter');
+    const inputForm = document.querySelectorAll('#product #productFilter input');
     inputForm.forEach(input =>{
         input.addEventListener('change', function(){
 
