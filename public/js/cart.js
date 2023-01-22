@@ -18,5 +18,3 @@ function resetCart(){
         }
     }
 }
-
-console.log(document.querySelector('#shopping-cart form #payment'));
