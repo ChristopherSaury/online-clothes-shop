@@ -22,6 +22,7 @@ class MensShoesController extends AbstractController
         $filter_color = $request->get('colors');
         $filter_sort = $request->get('sort');
         $product = $shoes->getAllShoes($shoes_catId = 11, $filter_color, $filter_sort);
+        $isShoes = true;
 
         if($request->get('ajax')){
             return new JsonResponse([
@@ -29,7 +30,7 @@ class MensShoesController extends AbstractController
             ]);
         }
         
-        return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product'));
+        return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product','isShoes'));
 
     }
 
@@ -42,6 +43,7 @@ class MensShoesController extends AbstractController
         $filter_color = $request->get('colors');
         $filter_sort = $request->get('sort');
         $product = $shoes->getAllShoes($shoes_catId = 13, $filter_color, $filter_sort);
+        $isShoes = true;
 
         if($request->get('ajax')){
             return new JsonResponse([
@@ -49,7 +51,7 @@ class MensShoesController extends AbstractController
             ]);
         }
         
-        return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product'));
+        return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product', 'isShoes'));
 
     }
 
@@ -62,6 +64,7 @@ class MensShoesController extends AbstractController
         $filter_color = $request->get('colors');
         $filter_sort = $request->get('sort');
         $product = $shoes->getAllShoes($shoes_catId = 15, $filter_color, $filter_sort);
+        $isShoes = true;
 
         if($request->get('ajax')){
             return new JsonResponse([
@@ -69,7 +72,7 @@ class MensShoesController extends AbstractController
             ]);
         }
         
-        return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product'));
+        return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product', 'isShoes'));
 
     }
 
@@ -82,6 +85,7 @@ class MensShoesController extends AbstractController
         $filter_color = $request->get('colors');
         $filter_sort = $request->get('sort');
         $product = $shoes->getAllShoes($shoes_catId = 17, $filter_color, $filter_sort);
+        $isShoes = true;
 
         if($request->get('ajax')){
             return new JsonResponse([
@@ -89,7 +93,7 @@ class MensShoesController extends AbstractController
             ]);
         }
         
-        return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product'));
+        return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product', 'isShoes'));
 
     }
 }

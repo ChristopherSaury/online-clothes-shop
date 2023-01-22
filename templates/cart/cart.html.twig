@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Shopping Cart - Lassap Shop{% endblock %}
+
+{% block stylesheets %} <link rel="stylesheet" href="{{asset('css/cart.css')}}"> {% endblock %}
+
+{% block body %}
+    <section id="shopping-cart">
+        <h2 class="cart-title">Shopping Cart</h2>
+        <div class="sc-content">
+            <div class="sc-container">
+                {% for element in clothes_dataCart %}
+                <div class="sc-product">
+                    <div>
+                        <img src="{{asset('img')}}/{{ element.clothes.image }}" alt="{{ element.clothes.model }}">
+                    </div>
+                    <div class="sc-product-info">
+                        <p class="sc-product-name">{{ element.clothes.model }}</p>
+                        <p class="sc-product-price">£ {{ element.clothes.price }}</p>
+                    </div>
+                    <div class="sc-action">
+                            <p>Quantity : {{ element.quantity }}</p>
+                            <span style="display: flex; flex-direction: row; gap: 5px; height: 30px;">
+                                <a href="{{path('remove_clothes_cart', {id: element.clothes.id})}}"> <button title="remove">-</button></a>
+                                <a href="{{path('add_to_clothes', {id: element.clothes.id})}}"><button title="add">+</button></a>
+                                <a href="{{path('delete_clothes_cart', {id: element.clothes.id})}}"><button title="delete"><i class="fa-solid fa-trash"></i></button></a>
+                            </span>
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% for element in shoes_dataCart %}
+                <div class="sc-product">
+                    <div>
+                        <img src="{{asset('img')}}/{{ element.shoes.image }}" alt="{{ element.shoes.Model }}">
+                    </div>
+                    <div class="sc-product-info">
+                        <p class="sc-product-name">{{ element.shoes.Model }}</p>
+                        <p class="sc-product-price">£ {{ element.shoes.price }}</p>
+                    </div>
+                    <div class="sc-action">
+                            <p>Quantity : {{ element.quantity }}</p>
+                            <span style="display: flex; flex-direction: row; gap: 5px; height: 30px;">
+                                <a href="{{path('remove_shoes_cart', {id: element.shoes.id})}}"> <button title="remove">-</button></a>
+                                <a href="{{path('add_to_shoes', {id: element.shoes.id})}}"><button title="add">+</button></a>
+                                <a href="{{path('delete_shoes_cart', {id: element.shoes.id})}}"><button title="delete"><i class="fa-solid fa-trash"></i></button></a>
+                            </span>
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% if total_cart == 0  %}
+                <div class="sc-empty">
+                    <p>Your shopping cart is empty</p>
+                </div>
+                {% endif %}
+            </div>
+            <div class="sc-total">
+                <p class="sc-price">Total : £{{ total_cart }}</p>
+                <form>
+                    {% if total_cart > 0  %}
+                    <button onclick="resetCart(); return false;" id="payment" type="button">Proceed to payment</button>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+        <div class="modal-msg">
+            <div class="msg-container">
+                <p>
+                    This is an exhibition website with no commercial purpose
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block js %}
+    <script src="{{asset('js/cart.js')}}"></script>
+{% endblock %}

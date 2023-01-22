@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mada&display=swap');
+#shoes-details{
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 110px;
+}
+#shoes-details .details-page{
+    width: 100%;
+    height: 100%;
+    padding: 0% 0%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#shoes-details .shoes-picture{
+    width: 100%;
+    height: auto;
+}
+#shoes-details .shoes-picture img{
+    width: 100%;
+    height: 100%;
+}
+#shoes-details .shoes-info{
+    padding: 20% 4% 0 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+#shoes-details .shoes-info .brand-name{
+    font-family: 'Noto Serif TC', serif;
+    font-size: 28px;
+}
+#shoes-details .shoes-info .shoes-model{
+    font-family: 'Passion One', cursive;
+    font-size: 35px;
+}
+#shoes-details .shoes-info .shoes-price{
+    font-family: 'Mada', sans-serif;
+    font-size: 26px;
+}
+#shoes-details .shoes-info .shoes-description{
+    margin-top: 2%;
+}
+#shoes-details #add-shoes-cart{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#shoes-details #add-shoes-cart select{
+    width: 50%;
+    padding: 5px 10px;
+    border-radius: 0px;
+}
+#shoes-details #add-shoes-cart button{
+    width: 50%;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #28292b;
+    font-family: 'Bebas Neue', cursive;
+}
+#shoes-details #add-shoes-cart button:hover{
+    background-color: #49494a;
+}

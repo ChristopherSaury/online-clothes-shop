@@ -22,6 +22,7 @@ class WomensShoesController extends AbstractController{
         $filter_color = $request->get('colors');
         $filter_sort = $request->get('sort');
         $product = $shoes->getAllShoes($shoes_catId = 12, $filter_color, $filter_sort);
+        $isShoes = true;
 
         if($request->get('ajax')){
             return new JsonResponse([
@@ -29,7 +30,7 @@ class WomensShoesController extends AbstractController{
             ]);
         }
 
-        return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product'));
+        return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product', 'isShoes'));
 }
 
 #[Route('/shoes/women/sport-shoes', name: 'shoes_women_sport_shoes')]
@@ -41,6 +42,7 @@ public function displayWomensSportShoes(ItemCategoryRepository $categorie, Color
     $filter_color = $request->get('colors');
     $filter_sort = $request->get('sort');
     $product = $shoes->getAllShoes($shoes_catId = 14, $filter_color, $filter_sort);
+    $isShoes = true;
 
     if($request->get('ajax')){
         return new JsonResponse([
@@ -48,7 +50,7 @@ public function displayWomensSportShoes(ItemCategoryRepository $categorie, Color
         ]);
     }
     
-    return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product'));
+    return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product', 'isShoes'));
 
 }
 
@@ -61,6 +63,7 @@ public function displayWomensBoots(ItemCategoryRepository $categorie, ColorRepos
     $filter_color = $request->get('colors');
     $filter_sort = $request->get('sort');
     $product = $shoes->getAllShoes($shoes_catId = 16, $filter_color, $filter_sort);
+    $isShoes = true;
 
     if($request->get('ajax')){
         return new JsonResponse([
@@ -68,7 +71,7 @@ public function displayWomensBoots(ItemCategoryRepository $categorie, ColorRepos
         ]);
     }
     
-    return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product'));
+    return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product', 'isShoes'));
 
 }
 
@@ -81,6 +84,7 @@ public function displayWomensSlingbacks(ItemCategoryRepository $categorie, Color
     $filter_color = $request->get('colors');
     $filter_sort = $request->get('sort');
     $product = $shoes->getAllShoes($shoes_catId = 18, $filter_color, $filter_sort);
+    $isShoes = true;
 
     if($request->get('ajax')){
         return new JsonResponse([
@@ -88,7 +92,7 @@ public function displayWomensSlingbacks(ItemCategoryRepository $categorie, Color
         ]);
     }
     
-    return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product'));
+    return $this->render('product/product.html.twig', compact('product_name', 'categories', 'colors', 'product', 'isShoes'));
 
 }
 }

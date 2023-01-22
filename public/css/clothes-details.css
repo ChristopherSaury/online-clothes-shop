@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mada&display=swap');
+#clothes-details{
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 110px;
+}
+#clothes-details .details-page{
+    width: 100%;
+    height: 100%;
+    padding: 0% 0%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#clothes-details .clothes-picture{
+    width: 100%;
+    height: auto;
+}
+#clothes-details .clothes-picture img{
+    width: 100%;
+    height: 100%;
+}
+#clothes-details .clothes-info{
+    padding: 20% 4% 0 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+#clothes-details .clothes-info .brand-name{
+    font-family: 'Noto Serif TC', serif;
+    font-size: 28px;
+}
+#clothes-details .clothes-info .clothes-model{
+    font-family: 'Passion One', cursive;
+    font-size: 35px;
+}
+#clothes-details .clothes-info .clothes-price{
+    font-family: 'Mada', sans-serif;
+    font-size: 26px;
+}
+#clothes-details .clothes-info .clothes-description{
+    margin-top: 2%;
+}
+#clothes-details #add-clothes-cart{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#clothes-details #add-clothes-cart select{
+    width: 50%;
+    padding: 5px 10px;
+    border-radius: 0px;
+}
+#clothes-details #add-clothes-cart button{
+    width: 50%;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #28292b;
+    font-family: 'Bebas Neue', cursive;
+}
+#clothes-details #add-clothes-cart button:hover{
+    background-color: #49494a;
+}
+

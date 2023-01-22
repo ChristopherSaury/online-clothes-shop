@@ -1,6 +1,10 @@
 <div class="product-selection">
     {% for key, value in product %}
-    <a href="#">
+    {% if isShoes is defined and isShoes == true %}
+    <a href="{{path('shoes_detail', {id: value.id})}}">
+    {% else%}
+    <a href="{{path('clothes_detail', {id: value.id})}}">
+    {% endif %}
         <div class="product-card">
             <img src="{{asset('img')}}/{{ value.image }}" alt="{{ value.model }}">
             <div class="product-info">

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Clothes Details - Lassap Shop {% endblock %}
+
+{% block stylesheets %} <link rel="stylesheet" href="{{asset('css/clothes-details.css')}}"> {% endblock %}
+
+{% block body %}
+    <section id="clothes-details">
+        <div class="details-page">
+            <div class="clothes-picture">
+                <img src="{{asset('img/')}}{{product.image}}" alt="{{product.model}}">
+            </div>
+            <div class="clothes-info">
+                <div class="clothes-data">
+                    <h2 class="brand-name">{{product.getBrand().getName()}}</h2>
+                    <p class="clothes-model">{{product.model}}</p>
+                    <p class="clothes-price">£{{product.price}}</p>
+                    <p class="clothes-description">
+                        {{product.description}}
+                    </p>
+                </div>
+                <form id="add-clothes-cart" method="post" action="{{path('add_to_clothes', {id: product.id})}}">
+                
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

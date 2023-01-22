@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+#shopping-cart{
+    width: 100%;
+    min-height: 120vh;
+    margin-top: 110px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#shopping-cart .cart-title{
+    padding-top: 2%;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 35px;
+}
+#shopping-cart .sc-content{
+    width: 100%;
+    padding: 4%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 2%;
+}
+#shopping-cart .sc-content .sc-container {
+    width: 100%;
+    height: auto;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 1px 1px 20px rgb(209, 197, 197);
+    border-radius: 4px;
+}
+#shopping-cart .sc-content .sc-total{
+    width: 100%;
+    height: 300px;
+    box-shadow: 1px 1px 20px rgb(209, 197, 197);
+    border-radius: 4px;
+}
+#shopping-cart .sc-content .sc-total form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+}
+#shopping-cart .sc-content .sc-total form button{
+    width: 50%;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #28292b;
+    font-family: 'Bebas Neue', cursive;
+}
+#shopping-cart .sc-content .sc-total form button:hover{
+    background-color: #49494a;
+}
+#shopping-cart .sc-content .sc-total .sc-price{
+    font-family: 'Alfa Slab One', cursive;
+    padding: 5% 0 2% 5%;
+    font-size: 30px;
+}
+#shopping-cart .sc-content .sc-container .sc-empty{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 35px;
+}
+#shopping-cart .sc-content .sc-container .sc-product{
+    width: 100%;
+    height: 130px;
+    display: grid;
+    grid-template-columns: 15% 50% 35%;
+}
+#shopping-cart .sc-content .sc-container .sc-product img{
+    width: 110px;
+    height: 130px;
+}
+#shopping-cart .sc-content .sc-container .sc-product .sc-product-info{
+    padding-left: 10%;
+    padding-right: 2%;
+}
+#shopping-cart .sc-content .sc-container .sc-product .sc-product-info .sc-product-name{
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 18px;
+    margin-bottom: 2%;
+    white-space: normal;
+}
+#shopping-cart .sc-content .sc-container .sc-product .sc-product-info .sc-product-price{
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+}
+#shopping-cart .sc-content .sc-container .sc-product .sc-action{
+    display: flex;
+    justify-content: space-between;
+}
+#shopping-cart .sc-content .sc-container .sc-product .sc-action button{
+    cursor: pointer;
+    width: 30px ;
+    height: 30px;
+    font-size: 15px;
+}
+#shopping-cart .modal-msg{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    place-items: center;
+}
+#shopping-cart .modal-msg .msg-container{
+    width: 60%;
+    height: 200px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+}

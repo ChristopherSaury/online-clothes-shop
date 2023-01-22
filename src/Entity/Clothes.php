@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ClothesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -40,12 +42,17 @@ class Clothes
     #[ORM\ManyToOne(inversedBy: 'clothes')]
     private ?ItemCategory $category = null;
 
-    #[ORM\Column(length:10, nullable: true)]
-    private ?string $size = null;
-
     #[ORM\ManyToOne(inversedBy: 'clothes')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Color $color = null;
+
+    #[ORM\ManyToOne(inversedBy: 'clothes')]
+    private ?Size $size = null;
+
+    public function __construct()
+    {
+
+    }
 
     public function getId(): ?int
     {
@@ -148,18 +155,6 @@ class Clothes
         return $this;
     }
 
-    public function getSize(): ?string
-    {
-        return $this->size;
-    }
-
-    public function setSize(?string $size): self
-    {
-        $this->size = $size;
-
-        return $this;
-    }
-
     public function getColor(): ?Color
     {
         return $this->color;
@@ -168,6 +163,18 @@ class Clothes
     public function setColor(?Color $color): self
     {
         $this->color = $color;
+
+        return $this;
+    }
+
+    public function getSize(): ?Size
+    {
+        return $this->size;
+    }
+
+    public function setSize(?Size $size): self
+    {
+        $this->size = $size;
 
         return $this;
     }
