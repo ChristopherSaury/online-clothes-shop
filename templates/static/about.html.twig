@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} About Us - Lassap Shop {% endblock %}
+
+{% block stylesheets %} <link rel="stylesheet" href="{{asset('css/about.css')}}"> {% endblock %}
+
+{% block style %}
+    <style>
+    #about .abt-banner{
+        width: 100%;
+        height: 400px;
+        display: grid;
+        place-items: center;
+        background: url('{{asset("img/about-banner.jpg")}}') center center;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <section id="about">
+        <div class="abt-banner">
+            <div class="abt-title-container">
+                <h1>About us</h1>
+            </div>
+        </div>
+        <div class="abt-content">
+            <div class="story">
+                <h2>Our Story</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad repellat, quos nesciunt tempora ex sunt quaerat quibusdam reprehenderit beatae quisquam minus ipsa necessitatibus in itaque sit amet et harum quidem.
+                    Doloribus, laboriosam, vero explicabo unde exercitationem assumenda aliquam est eos doloremque sed tempora necessitatibus delectus similique dolor illum iusto quae et minima facilis natus distinctio omnis itaque facere! Optio, neque.
+                </p>
+            </div>
+            <div class="our-values">
+                <h2>Our Values</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad repellat, quos nesciunt tempora ex sunt quaerat quibusdam reprehenderit beatae quisquam minus ipsa necessitatibus in itaque sit amet et harum quidem.
+                    Doloribus, laboriosam, vero explicabo unde exercitationem assumenda aliquam est eos doloremque sed tempora necessitatibus delectus similique dolor illum iusto quae et minima facilis natus distinctio omnis itaque facere! Optio, neque.
+                </p>
+            </div>
+        </div>
+        <div class="slideshow-section">
+            <h2>Why they like us</h2>
+            <div class="slideshow-container">
+                <div class="slide-testimonial">
+                    <q>
+                        Lorem ipsum dolor sit amet. In atque veniam quidem nulla odit repellendus at ea architecto praesentium hic quas amet libero, temporibus animi excepturi! Veniam dolore architecto ducimus.
+                    </q>
+                    <span>
+                        <h4 class="author"> Mathew Scott</h4>
+                        <p>manager</p>
+                    </span>
+                </div>
+
+                <div class="slide-testimonial">
+                    <q>
+                        Lorem ipsum dolor sit amet. In atque veniam quidem nulla odit repellendus at ea architecto praesentium hic quas amet libero, temporibus animi excepturi! Veniam dolore architecto ducimus.
+                    </q>
+                    <span>
+                        <h4 class="author"> Ethan McKay</h4>
+                        <p>designer</p>
+                    </span>
+                </div>
+
+                <div class="slide-testimonial">
+                    <q>
+                        Lorem ipsum dolor sit amet. In atque veniam quidem nulla odit repellendus at ea architecto praesentium hic quas amet libero, temporibus animi excepturi! Veniam dolore architecto ducimus.
+                    </q>
+                    <span>
+                        <h4 class="author"> Sarah Craig</h4>
+                        <p>retailer</p>
+                    </span>
+                </div>
+
+                <div class="slide-testimonial">
+                    <q>
+                        Lorem ipsum dolor sit amet. In atque veniam quidem nulla odit repellendus at ea architecto praesentium hic quas amet libero, temporibus animi excepturi! Veniam dolore architecto ducimus.
+                    </q>
+                    <span>
+                        <h4 class="author"> Amber Martin</h4>
+                        <p>retailer</p>
+                    </span>
+                </div>
+
+                <a class="prev" title="previous testimonial" onclick="plusSlides(-1, 'slide-right')"><i class="fa-solid fa-caret-left"></i></a>
+                <a class="next" title="next testimonial" onclick="plusSlides(1, 'slide-left')"><i class="fa-solid fa-caret-right"></i></a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block js %}
+    <script src="{{asset('js/about.js')}}"></script>
+{% endblock %}

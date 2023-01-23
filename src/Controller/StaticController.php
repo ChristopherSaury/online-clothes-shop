@@ -11,13 +11,8 @@ class StaticController extends AbstractController{
         return $this->render('static/home.html.twig');
     }
 
-    // #[Route('/login', name:'login')]
-    // public function displayLogin(){
-    //     return $this->render('login/login.html.twig');
-    // }
-
-    #[Route('/signup', name:'signup')]
-    public function displaySignUp(){
-        return $this->render('static/signup.html.twig');
+    #[Route('/about', name:'about')]
+    public function aboutPage(){
+        return $this->render('static/about.html.twig');
     }
 }
