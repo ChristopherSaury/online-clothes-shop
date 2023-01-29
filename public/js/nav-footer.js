@@ -46,3 +46,37 @@ window.onload = () =>{
         })
     }
 }
+// NAVBAR MOBILE
+function openMobileMenu(){
+    let menuIcon = document.querySelector('#mobile-nav .fa-bars');
+    let crossMenu = document.querySelector('#mobile-nav .fa-xmark');
+    let menuMobile = document.querySelector('.mobile-menu');
+
+    if(!crossMenu.classList.contains('open')){
+        crossMenu.classList.add('open');
+        menuIcon.style.display = 'none';
+        crossMenu.style.display = 'initial';
+        menuMobile.style.display = 'flex';
+    }else if(crossMenu.classList.contains('open')){
+        crossMenu.classList.remove('open');
+        crossMenu.style.display = 'none';
+        menuIcon.style.display = 'initial';
+        menuMobile.style.display = 'none';
+    }
+}
+
+let navBtn = document.getElementsByClassName('accordion');
+let i;
+
+for (i = 1; i <= 4; i++){
+    navBtn[i].addEventListener('click', function(){
+        this.classList.toggle('btn-active');
+
+        let panel = this.nextElementSibling;
+        if (panel.style.display === "flex") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "flex";
+          }
+    });
+}

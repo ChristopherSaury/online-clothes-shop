@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 #shopping-cart{
     width: 100%;
-    min-height: 120vh;
+    min-height: 100vh;
     margin-top: 110px;
     display: flex;
     align-items: center;
@@ -133,4 +133,10 @@
     gap: 10px;
     font-family: 'Lexend', sans-serif;
     font-size: 18px;
+}
+@media screen and (max-width: 800px){
+    #shopping-cart .sc-content{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
 }

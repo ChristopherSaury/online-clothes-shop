@@ -51,6 +51,8 @@
 #about .slideshow-section h2{
     font-family: 'Lexend', sans-serif;
     font-size: 40px;
+    text-align: center;
+    padding: 0 5%;
 }
 #about .slideshow-section .slideshow-container{
     padding: 4% 12%;
@@ -106,7 +108,7 @@
 
 /*********************** SLIDE ANIMATION **********************************/
 .slide-left {
-    animation: slideLeft 1s ease-in-out;
+    animation: slideLeft 1s ease;
   }
   @keyframes slideLeft {
     0% {
@@ -127,7 +129,7 @@
 
   .slide-right{
     visibility: visible !important;
-    animation: slideRight 1s ease-in-out;
+    animation: slideRight 1s ease;
   }
   @keyframes slideRight {
     0% {
@@ -144,4 +146,32 @@
       opacity:1;
       transform: translateX(0%);
     }
+}
+
+/******************** RESPONSIVE ************************/
+@media screen and (max-width: 310px){
+  #about .abt-banner .abt-title-container{
+    text-align: center;
+  }
+}
+@media screen and (max-width: 992px) {
+  #about{
+    margin-top: 80px;
+  }
+  #about .abt-banner .abt-title-container{
+    width: 80%;
+    font-size: 40px;
+  }
+  #about .abt-content{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 8%;
+    gap: 20px;
+}
+#about .slideshow-section .slideshow-container .prev{
+  left: 5%;
+}
+#about .slideshow-section .slideshow-container .next{
+  right: 5%;
+}
 }

@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="{{asset('css/nav-footer.css')}}">
@@ -60,6 +61,9 @@
                         <li><a href="{{path('app_login')}}">Login</a></li>
                         <li><a href="{{path('app_contact')}}">Contact</a></li>
                         <li><a href="{{path('cart')}}"><i class="fa-solid fa-basket-shopping"></i></a></li>
+                        {% if app.user.getUserIdentifier() is defined %}
+                        <li><a href="{{path('user_params', {id: app.user.getId()})}}"><i class="fa-solid fa-user"></i></a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -167,6 +171,61 @@
                 </div>
             </div>
         </nav>
+
+        <!-- NAV MOBILE -->
+        <nav id="mobile-nav">
+            <div class="logo-mobile-container">
+                <a href="{{path('home')}}">
+                    <img id="logo-mobile" src="{{asset('img/lasapp-logo.png')}}" alt="lasapp logo">
+                </a>
+            </div>
+            <i onclick="openMobileMenu()" class="fa-solid fa-bars"></i>
+            <i onclick="openMobileMenu()" class="fa-solid fa-xmark"></i>
+        </nav>
+        <div class="mobile-menu">
+            <div class="menu-accordion">
+                <a href="{{path('home')}}"><button class="accordion">Home</button></a>
+                <button class="accordion">Mens Shoes</button>
+                <div class="panel">
+                    <ul>
+                        <li><a href="{{path('shoes_men_sneakers')}}">Sneakers</a></li>
+                        <li><a href="{{path('shoes_men_sport_shoes')}}">Sport Shoes</a></li>
+                        <li><a href="{{path('shoes_men_boots')}}">Boots</a></li>
+                        <li><a href="{{path('shoes_men_dress_shoes')}}">Dress Shoes</a></li>
+                    </ul>
+                  </div>
+                <button class="accordion">Womens Shoes</button>
+                <div class="panel">
+                    <ul>
+                        <li><a href="{{path('shoes_women_sneakers')}}">Sneakers</a></li>
+                        <li><a href="{{path('shoes_women_sport_shoes')}}">Sport Shoes</a></li>
+                        <li><a href="{{path('shoes_women_boots')}}">Boots</a></li>
+                        <li><a href="{{path('shoes_women_slingbacks')}}">Slingbacks</a></li>
+                    </ul>
+                </div>
+                <button class="accordion">Clothes</button>
+                <div class="panel">
+                    <ul>
+                        <li><a href="{{path('clothes_headwear')}}">Headwear</a></li>
+                        <li><a href="{{path('clothes_tshirt')}}">T-shirt</a></li>
+                        <li><a href="{{path('clothes_bottoms')}}">Bottoms</a></li>
+                        <li><a href="{{path('clothes_sweatshirt')}}">Sweatshirt</a></li>
+                    </ul>
+                </div>
+                <button class="accordion">Clothes Collections</button>
+                <div class="panel">
+                    <ul>
+                        <li><a href="{{path('clothes_collection', {season : 2})}}">Fall 2023</a></li>
+                        <li><a href="{{path('clothes_collection', {season : 3})}}">Spring / Summer 2023</a></li>
+                        <li><a href="{{path('clothes_collection', {season : 4})}}">Winter 2023</a></li>
+                    </ul>
+                </div>
+                <a href="{{path('about')}}"><button class="accordion">About</button></a>
+                <a href="{{path('app_login')}}"><button class="accordion">Login</button></a>
+                <a href="{{path('app_contact')}}"><button class="accordion">Contact</button></a>
+                <a href="{{path('cart')}}"><button class="accordion">Cart</button></a>
+            </div>
+        </div>
         {% block body %}{% endblock %}
 
         <footer>
@@ -183,8 +242,10 @@
                     <div class="f-nsl-form">
                         <form action="#" method="post">
                             <label for="newsletter">5% discount on an order for a subscription</label>
-                            <input type="text" placeholder="Your email address" id="newsletter" name="newsletter">
-                            <button type="submit">Subscribe</button>
+                            <div class="nsl-input">
+                                <input type="text" placeholder="Your email address" id="newsletter" name="newsletter">
+                                <button type="submit">Subscribe</button>
+                            </div>
                         </form>
                     </div>
                 </div>
