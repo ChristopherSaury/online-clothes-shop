@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+#upd-user{
+    width: 100%;
+    height: 100%;
+    margin-top: 110px;
+}
+#upd-user h1{
+    text-align: center;
+    padding-top: 2%;
+    font-family: 'Bakbak One', cursive;
+    font-size: 50px;
+}
+#upd-user .upd-form-ct{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+/******************** FORM  **********************/
+#upd-user .upd-form-ct{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+#upd-user .upd-form-ct form {
+    margin-top: 4%;
+    padding: 0 5% 5% 5%;
+    width: 600px;
+    height: 100%;
+}
+#upd-user .upd-form-ct form label{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 14px;
+}
+#upd-user .upd-form-ct form input,
+#upd-user .upd-form-ct form select{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 12px;
+    padding: 8px 8px;
+    border-radius: 0;
+    border: 1px solid #000;
+}
+#upd-user .upd-form-ct form .continent-option{
+    font-size: 14px;
+    background-color: rgb(215, 210, 210);
+}
+#upd-user .upd-form-ct form input:focus,
+#upd-user .upd-form-ct form select:focus{
+    outline-color: transparent;
+}
+
+#upd-user .upd-form-ct form .third-row,
+#upd-user .upd-form-ct form .seventh-row,
+#upd-user .upd-form-ct form .eighth-row{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+#upd-user .upd-form-ct form .third-row div,
+#upd-user .upd-form-ct form .fourth-row div,
+#upd-user .upd-form-ct form .fifth-row div,
+#upd-user .upd-form-ct form .sixth-row div,
+#upd-user .upd-form-ct form .seventh-row div,
+#upd-user .upd-form-ct form .eighth-row div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+    gap: 5px;
+}
+
+#upd-user .upd-form-ct form .btn-wrapper{
+    width: 100%;
+    height: 100px;
+}
+#upd-user .upd-form-ct form .btn-wrapper button{
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    border-radius: 0;
+    border: 0;
+    color: #fff;
+    background-color: #28292b;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+#upd-user .upd-form-ct form .btn-wrapper button:hover{
+    background-color: #3e3e3e;
+}
+#upd-user .upd-form-ct form .btn-wrapper .login-link p{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 2px;
+}
+
+
+#upd-user #upd-userForm .errorUpdMsg{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    width: 100%;
+    height: 50px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: 0.5s;
+}
+#upd-user #upd-userForm .fa-xmark{
+    cursor: pointer;
+}
+#upd-user #upd-userForm .updUserSuccess{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    width: 100%;
+    height: 50px;
+    color: #155724;
+    background-color: #d4edda;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 599px) {
+    #upd-user{
+        width: 100%;
+        margin-top: 110px;
+        padding: 0 2%;
+    }
+    #upd-user .upd-form-ct form .third-row,
+    #upd-user .upd-form-ct form .seventh-row,
+    #upd-user .upd-form-ct form .eighth-row{
+        flex-direction: column;
+    }
+}

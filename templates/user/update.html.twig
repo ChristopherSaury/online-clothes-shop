@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update User Data - Lassap Shop{% endblock %}
+{% block stylesheets %} <link rel="stylesheet" href="{{asset('css/upd-user.css')}}"> {% endblock %}
+
+{% block body %}
+    <section id="upd-user">
+        <h1>Update User Data</h1>
+        <div class="upd-form-ct">
+            <form id="upd-userForm" method="post" action="{{path('user_update_handler', {id: user.id})}}">
+
+                {% for tokenErr in app.flashes('tokenErr') %}
+                <div class="errorUpdMsg">
+                    <p class="errUpdMsg">{{ tokenErr }}</p>
+                </div>
+                {% endfor %}
+
+                {% for updSuccess in app.flashes('updSuccess') %}
+                <div class="updUserSuccess">
+                    <p class="uUSuccessMsg">{{ updSuccess }}</p>
+                </div>
+                {% endfor %}
+    
+                <div class="third-row">
+                    <div class="lastname-input">
+                        <label for="lastname_update">Lastname</label>
+                        <input type="text" id="lastname_update" name="lastname_update" value="{{user.lastname}}" placeholder="Your Lastname">
+                    </div>
+                    <div class="firstname-input">
+                        <label for="firstname_update">Firstname</label>
+                        <input type="text" id="firstname_update" name="firstname_update" value="{{user.firstname}}" placeholder="Your Firstname">
+                    </div>
+                </div>
+    
+                <div class="fourth-row">
+                    <div class="country-input">
+                        <label for="country_update">Country</label>
+                        <select  name="country_update" id="country_update">
+                            <option value="">--Country of residence--</option>
+                            <option class="continent-option" value="" disabled>Africa</option>
+                            {% for country in african_countries %}
+                            <option value="{{ country.id }}">{{ country.name }}</option>
+                            {% endfor %}
+                            <option class="continent-option" value="" disabled>America</option>
+                            {% for country in american_countries %}
+                            <option value="{{ country.id }}">{{ country.name }}</option>
+                            {% endfor %}
+                            <option class="continent-option" value="" disabled>Asia</option>
+                            {% for country in asian_countries %}
+                            <option value="{{ country.id }}">{{ country.name }}</option>
+                            {% endfor %}
+                            <option class="continent-option" value="" disabled>Europe</option>
+                            {% for country in european_countries %}
+                            <option value="{{ country.id }}">{{ country.name }}</option>
+                            {% endfor %}
+                            <option class="continent-option" value="" disabled>Oceania</option>
+                            {% for country in oceanian_countries %}
+                            <option value="{{ country.id }}">{{ country.name }}</option>
+                            {% endfor %}
+    
+                        </select>
+                        
+                    </div>
+                </div>
+    
+                <div class="fifth-row">
+                    <div class="address-input">
+                        <label for="address_update">Address</label>
+                        <input type="text" id="address_update" name="address_update" value="{{user.address}}" placeholder="Your Address">
+                    </div>
+                </div>
+    
+                <div class="sixth-row">
+                    <div class="building-loor-input">
+                        <label for="building-floor-update">Building/Floor</label>
+                        {% if user.building_floor is defined %}
+                        <input  type="text" id="building-floor-update" name="building-floor-update" value="{{user.building_floor}}" placeholder="Your Building/Floor">
+                        {% else %}
+                        <input  type="text" id="building-floor-update" name="building-floor-update" placeholder="Your Building/Floor">
+                        {% endif %}
+                    </div>
+                </div>
+    
+                <div class="seventh-row">
+                    <div class="city-input">
+                        <label for="city_update">City</label>
+                        <input type="text" id="city_update" name="city_update" value="{{user.city}}" placeholder="City">
+                    </div>
+                    <div class="postcode-input">
+                        <label for="postcode_update">Post Code</label>
+                        <input type="number" id="postcode_update" name="postcode_update" value="{{user.postcode}}" placeholder="Your Post Code">
+                    </div>
+                </div>
+    
+                <div class="eighth-row">
+                    <div class="phone-input">
+                        <label for="phone_update">Phone</label>
+                        <input type="number" id="phone_update" name="phone_update" value="{{user.phone}}" placeholder="Your Phone number">
+                    </div>
+                    <div class="birth-input">
+                    <label for="birth-date-update">Birth date*</label>
+                        <input type="date" id="birth-date-update" name="birth-date-update" value="{{user.birthdate}}" placeholder="Your Birth Date">
+                    </div>
+                    <input type="hidden" name="token-upd" value="{{ csrf_token('update-user') }}">
+                </div>
+                <div class="btn-wrapper">
+                    <button type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}

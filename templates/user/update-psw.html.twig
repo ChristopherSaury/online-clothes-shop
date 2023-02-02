@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Change Password - Lassap Shop {% endblock %}
+
+{% block stylesheets %} <link rel="stylesheet" href="{{asset('css/change-psw.css')}}"> {% endblock %}
+
+{% block body %}
+    <section id="change-psw">
+        <h1 class="ch-psw-title">Change Password</h1>
+        <form method="POST" action="{{path('user_change_psw_handler', {id : app.user.id})}}">
+
+            {% for errPsw in app.flashes('errPsw') %}
+            <div class="error-container">
+                <div class="alert-danger">{{ errPsw }}</div>
+            </div>
+            {% endfor %}
+            {% for successNewPsw in app.flashes('successNewPsw') %}
+            <div class="success-container">
+                <div class="successNewPsw">{{ successNewPsw }}</div>
+            </div>
+            {% endfor %}
+
+            <div class="input-container">
+                <div class="ch-psw1">
+                    <label for="newPsw">New Password</label>
+                    <input type="password"  name="newPsw1" id="newPsw" placeholder="New Password" required>
+                </div>
+                <div class="ch-psw2">
+                    <label for="inputConfirm">Password Confirmation</label>
+                    <input type="password" name="inputConfirm" id="inputConfirm" placeholder="Password Confirmation" required>
+                </div>
+                <input type="hidden" name="token-new-psw" value="{{ csrf_token('new-psw') }}">
+                <div class="btn-wrapper">
+                    <button type="submit">Change Password</button>
+                </div>
+            </div>
+        </form>
+    </section>
+{% endblock %}
