@@ -3,18 +3,6 @@
 {% block title %}Login - Lassap Shop{% endblock %}
 {% block stylesheets %} <link rel="stylesheet" href="{{asset('css/login.css')}}"> {% endblock %}
 
-{% block style %}
-<style>
-    #login .page-photo{
-        width: 100%;
-        height: auto;
-        background: url('{{asset("img/login-page.jpg")}}');
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-    }
-</style>
-{% endblock %}
-
 {% block body %}
 <section id="login">
     <div class="login-form">
@@ -24,12 +12,6 @@
             <div class="error-container">
                 {% if error %}
                     <div class="alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                {% endif %}
-    
-                {% if app.user %}
-                    <div class="mb-3">
-                        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-                    </div>
                 {% endif %}
             </div>
 

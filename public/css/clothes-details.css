@@ -3,25 +3,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Mada&display=swap');
 #clothes-details{
     width: 100%;
-    min-height: 100vh;
+    height: 120vh;
     margin-top: 110px;
 }
 #clothes-details .details-page{
     width: 100%;
     height: 100%;
-    padding: 0% 0%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* padding: 0% 0%; */
+    display: flex;
+    flex-direction: row;
 }
 #clothes-details .clothes-picture{
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 #clothes-details .clothes-picture img{
     width: 100%;
     height: 100%;
 }
 #clothes-details .clothes-info{
+    width: 100%;
+    height: 100%;
     padding: 20% 4% 0 8%;
     display: flex;
     flex-direction: column;
@@ -38,9 +40,6 @@
 #clothes-details .clothes-info .clothes-price{
     font-family: 'Mada', sans-serif;
     font-size: 26px;
-}
-#clothes-details .clothes-info .clothes-description{
-    margin-top: 2%;
 }
 #clothes-details #add-clothes-cart{
     width: 100%;
@@ -72,3 +71,13 @@
     background-color: #49494a;
 }
 
+@media screen and (max-width: 992px) {
+    #clothes-details{
+        margin-top: 80px;
+        height: 100%;
+        margin-bottom: 8%;
+    }
+    #clothes-details .details-page{
+        flex-direction: column;
+    }
+}

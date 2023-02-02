@@ -3,33 +3,6 @@
 {% block title %} Sign Up - Lassap Shop{% endblock %}
 {% block stylesheets %} <link rel="stylesheet" href="{{asset('css/signup.css')}}"> {% endblock %}
 
-{% block style %}
-<style>
-    #upd-user .page-photo{
-        width: 100%;
-        min-height: 140vh;
-        background: url("{{asset('img/signup-page.jpg')}}");
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-    }
-    #upd-user form .errorSignUp{
-        width: calc(100% - 10px);
-        height: 50px;
-        color: #842029;
-        background-color: #f8d7da;
-        padding: 1rem 1rem;
-        margin-bottom: 5px;
-        border: 1px solid #f5c2c7;
-        border-radius: 0.25rem;
-    }
-    @media screen and (max-width: 800px){
-        #upd-user .page-photo{
-            min-height: 90vh;
-        }
-    }
-</style>
-{% endblock %}
-
 {% block body %}
 <section id="signup">
     <div class="page-photo"></div>

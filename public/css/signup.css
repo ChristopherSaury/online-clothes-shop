@@ -6,15 +6,37 @@ html{
 #signup{
     margin-top: 110px;
     width: 100%;
-    min-height: 140vh;
+    height: 140vh;
     display: flex;
     flex-direction: row;
 }
+#signup .page-photo{
+    width: 100%;
+    height: 100%;
+    background: url("../img/signup-page.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#signup form .errorSignUp{
+    width: calc(100% - 10px);
+    height: 50px;
+    color: #842029;
+    background-color: #f8d7da;
+    padding: 1rem 1rem;
+    margin-bottom: 5px;
+    border: 1px solid #f5c2c7;
+    border-radius: 0.25rem;
+}
+
+
+
+/*****************************/
 #signup .signup-form{
     width: 100%;
-    min-height: 140vh;
-    display: grid;
+    height: 100%;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 #signup .signup-form form {
     margin-top: 1%;
@@ -176,23 +198,14 @@ input[type=number] {
     #signup{
         flex-direction: column;
         margin-top: 80px;
+        height: 240vh;
     }
     #signup .signup-form{
-        min-height: 100vh;
+        /* min-height: 100vh; */
         padding-top: 4%;
-        margin-bottom: 4%;
     }
     #signup .signup-form form{
         width: 100%;
         height: auto;
     }
-    /* #signup .signup-form form .second-row,
-    #signup .signup-form form .third-row,
-    #signup .signup-form form .seventh-row,
-    #signup .signup-form form .eighth-row{
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 1fr 1fr;
-        gap: 10px;
-    } */
 }

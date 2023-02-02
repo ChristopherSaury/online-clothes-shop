@@ -2,17 +2,23 @@
 #login{
     margin-top: 110px;
     width: 100%;
-    min-height: 140vh;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
+    height: 120vh;
+    display: flex;
+    flex-direction: row;
 }
-
+#login .page-photo{
+    width: 100%;
+    height: 100%;
+    background: url('../img/login-page.jpg')
+    center center no-repeat;
+    background-size: 100% 100%;
+}
 #login .login-form{
-    display: grid;
+    display: flex;
     justify-content: center;
     width: 100%;
-    height: 140vh;
+    height: 100%;
+    margin-bottom: 8%;
 }
 
 #login .login-form form{
@@ -89,13 +95,6 @@
 #login .login-form .input-container .btn-wrapper a:hover{
     text-decoration: underline;
 }
-/* #login .login-form .input-container .btn-wrapper .new-account{
-    margin-top: 2%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 5px;
-} */
 #login .login-form .input-container .btn-wrapper .ct-new-account{
     width: 100%;
     height: auto;
@@ -130,12 +129,8 @@
 @media screen and (max-width: 992px){
     #login{
         margin-top: 80px;
-        margin-bottom: 4%;
-        grid-template-columns: 100%;
-        grid-template-rows: 50% 50%;
-    }
-    #login .login-form form{
-        width: 100%;
+        height: 140vh;
+        flex-direction: column-reverse;
     }
     #login .login-form .input-container .btn-wrapper .ct-new-account{
         gap: 2px;

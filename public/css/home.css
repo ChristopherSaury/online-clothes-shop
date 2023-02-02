@@ -21,7 +21,7 @@
     center center no-repeat;
     background-size: 100% 100%;
     transition: all 0.5 ease-in-out ;
-    animation: banner-mobile 25s infinite linear;
+    animation: banner-mobile 18s infinite linear;
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -50,6 +50,20 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100%;
+}
+.container .a-shoes-link{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/shoes.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.container .a-clothes-link{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/clothes.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 .a-title-screen-ct .title-container{
     position: absolute;
@@ -80,7 +94,7 @@
 }
 /*************************************** HOME PURCHASE INFO *********************************************/
 #homeAdd {
-    padding: 6% 8%;
+    /* padding: 6% 8%; */
     width: 100%;
     height: auto;
 }
@@ -89,6 +103,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     place-items: center;
+    padding: 4% 8%;
 }
 #homeAdd .homePurchase div{
     display: grid;
@@ -111,6 +126,44 @@
 #homeAdd .homePurchase i{
     color: #79796f;
     font-size: 40px;
+}
+/*********************** NEW ARRIVALS ***************************/
+#homeAdd .new-arrivals{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+    padding-bottom: 4%;
+    background-color: #dfdfdd;
+}
+#homeAdd .new-arrivals .new-arrivals-title{
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    padding-top: 2%;
+    font-size: 40px;
+}
+#homeAdd .hProduct-ct{
+    width: 100%;
+    height: 100%;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+#homeAdd .hProduct-ct .product-card{
+    width: 250px;
+    height: 420px;
+}
+#homeAdd .hProduct-ct .product-card .product-model{
+    font-family: 'PT Sans', sans-serif;
+    margin: 2% 0 2% 0;
+}
+#homeAdd .hProduct-ct .product-card img{
+    width: 250px;
+    height: 350px;
 }
 /*********************** RESPONSIVE *****************************/
 @media screen and (max-width: 992px) {
@@ -143,5 +196,6 @@
         grid-template-columns: 100%;
         grid-template-rows: 1fr 1fr 1fr;
         place-items: center;
+        gap: 10px;
     }
 }

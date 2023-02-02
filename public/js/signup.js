@@ -55,7 +55,9 @@ function signup(){
 function errorSignUpRedirect(message){
     window.location.href = '#signupForm';
     errMsg.innerHTML = message;
-    document.documentElement.scrollTop = 0 ;
+    if(window.innerWidth > 992){
+        document.documentElement.scrollTop = 0 ;
+    }
     return errMsgContainer.style.display = 'flex';
 }
 function closeSuccessSignUp(){

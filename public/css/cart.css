@@ -3,8 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 #shopping-cart{
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     margin-top: 110px;
+    margin-bottom: 4%;
     display: flex;
     align-items: center;
     flex-direction: column;
