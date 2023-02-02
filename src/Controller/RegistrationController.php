@@ -4,12 +4,9 @@ namespace App\Controller;
 
 use DateTime;
 use App\Entity\User;
-use DateTimeImmutable;
 use App\Security\EmailVerifier;
-use App\Form\RegistrationFormType;
 use Symfony\Component\Mime\Address;
 use App\Repository\CountryRepository;
-use App\Repository\ContinentRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
