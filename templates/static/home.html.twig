@@ -2,26 +2,6 @@
 
 {% block title %} Home - Lassap Shop {% endblock %}
 {% block stylesheets %} <link rel="stylesheet" href="{{asset('css/home.css')}}"> {% endblock %}
-{% block style %}
-<style>
-    .container .a-shoes-link{
-        /* position: relative; */
-        width: 100%;
-        height: 100%;
-        background-image: url("{{asset('img/shoes.jpg')}}");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
-    .container .a-clothes-link{
-        /* position: relative; */
-        width: 100%;
-        height: 100%;
-        background-image: url("{{asset('img/clothes.jpg')}}");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
-    </style>
-{% endblock %}
 
 {% block body %}
 <div class="a-title-screen-ct">
@@ -60,6 +40,27 @@
             <i class="fa-regular fa-money-bill-1"></i>
             <h3>Buy now pay later</h3>
             <p>Payment in 3 times or 1 month after the order</p>
+        </div>
+    </div>
+
+    <div class="new-arrivals">
+        <h1 class="new-arrivals-title">New Arrivals</h1>
+        <div class="hProduct-ct">
+            {% for data in home_product %}
+            <a href="{{path('clothes_detail', {id: data.id})}}">
+            <div class="product-card">
+                <img src="{{asset('img')}}/{{ data.image }}" alt="{{ data.model }}">
+                <div class="product-info">
+                    <p class="product-model">
+                        {{data.model}}
+                    </p>
+                    <p>
+                        £{{ data.price }}
+                    </p>
+                </div>
+            </div>
+            </a>
+            {% endfor %}
         </div>
     </div>
 </section>
