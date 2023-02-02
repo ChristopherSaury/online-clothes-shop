@@ -224,6 +224,9 @@
                 <a href="{{path('app_login')}}"><button class="accordion">Login</button></a>
                 <a href="{{path('app_contact')}}"><button class="accordion">Contact</button></a>
                 <a href="{{path('cart')}}"><button class="accordion">Cart</button></a>
+                {% if app.user.getUserIdentifier() is defined %}
+                <a href="{{path('user_params', {id: app.user.getId()})}}"><button class="accordion">Account</button></a>
+                {% endif %}
             </div>
         </div>
         {% block body %}{% endblock %}
