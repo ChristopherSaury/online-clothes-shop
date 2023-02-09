@@ -439,6 +439,10 @@ footer .credit-row{
     color: rgb(102, 104, 106);
     padding: 2% 0;
 }
+footer .credit-row a{
+    display: inline;
+    color: rgb(102, 104, 106);
+}
 footer .second-row h5{
     font-size: 24px;
     font-family: 'Bebas Neue', cursive;

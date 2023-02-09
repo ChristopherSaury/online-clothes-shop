@@ -143,11 +143,19 @@ input[type=number] {
     gap: 5px;
     margin-top: 2px;
 }
-#signup .signup-form form .btn-wrapper .login-link p a{
+#signup .signup-form form .btn-wrapper .use-terms-wrapper a{
+    display: inline;
+}
+#signup .signup-form form .btn-wrapper .login-link p a,
+#signup .signup-form form .btn-wrapper .use-terms-wrapper a{
     color: rgb(60, 60, 243);
 }
-#signup .signup-form form .btn-wrapper .login-link p a:hover{
+#signup .signup-form form .btn-wrapper .login-link p a:hover,
+#signup .signup-form form .btn-wrapper .use-terms-wrapper a:hover{
     text-decoration: underline;
+}
+#signup .signup-form form .btn-wrapper .use-terms-wrapper label{
+    white-space: nowrap;
 }
 #signup .signup-form form .use-terms-wrapper,
 #signup .signup-form form .login-link{
