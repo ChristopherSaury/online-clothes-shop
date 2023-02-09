@@ -9,7 +9,7 @@
     <div class="signup-form">
         <form id="signupForm">
             <h2>Your account</h2>
-            <h1>Create an account on Lassap.co.uk</h1>
+            <h1>Create an account on lassap-shop.com</h1>
            
             <div class="errorSignUp">
                 <p class="errSignUpMsg"></p>
@@ -117,7 +117,7 @@
                 <button id="signupSubmit" type="button" onclick="signup(); return false;">Sign Up</button>
                 <div class="use-terms-wrapper">
                     <input class="signupData" type="checkbox" name="termsOfUse" id="termsOfUse">
-                    <label for="termsOfUse">I have read and accept the terms of use of my personal data.</label>
+                    <label for="termsOfUse">I have read and accept the <a href="{{asset('img/terms/terms-of-use.pdf')}}" target="_blank">terms of use</a>  of my personal data.</label>
                 </div>
                 <div class="login-link">
                   <p>Already have an account ? <a href="{{path('app_login')}}">Log in</a></p>
