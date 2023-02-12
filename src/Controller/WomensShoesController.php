@@ -26,7 +26,7 @@ class WomensShoesController extends AbstractController{
 
         if($request->get('ajax')){
             return new JsonResponse([
-                'content' => $this->renderView('product/content.html.twig', compact('product'))
+                'content' => $this->renderView('product/content.html.twig', compact('product', 'isShoes'))
             ]);
         }
 
@@ -46,7 +46,7 @@ public function displayWomensSportShoes(ItemCategoryRepository $categorie, Color
 
     if($request->get('ajax')){
         return new JsonResponse([
-            'content' => $this->renderView('product/content.html.twig', compact('product'))
+            'content' => $this->renderView('product/content.html.twig', compact('product', 'isShoes'))
         ]);
     }
     
@@ -67,7 +67,7 @@ public function displayWomensBoots(ItemCategoryRepository $categorie, ColorRepos
 
     if($request->get('ajax')){
         return new JsonResponse([
-            'content' => $this->renderView('product/content.html.twig', compact('product'))
+            'content' => $this->renderView('product/content.html.twig', compact('product', 'isShoes'))
         ]);
     }
     
@@ -88,7 +88,7 @@ public function displayWomensSlingbacks(ItemCategoryRepository $categorie, Color
 
     if($request->get('ajax')){
         return new JsonResponse([
-            'content' => $this->renderView('product/content.html.twig', compact('product'))
+            'content' => $this->renderView('product/content.html.twig', compact('product', 'isShoes'))
         ]);
     }
     

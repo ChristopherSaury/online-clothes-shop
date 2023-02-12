@@ -26,7 +26,7 @@ class MensShoesController extends AbstractController
 
         if($request->get('ajax')){
             return new JsonResponse([
-                'content' => $this->renderView('product/content.html.twig', compact('product'))
+                'content' => $this->renderView('product/content.html.twig', compact('product', 'isShoes'))
             ]);
         }
         
@@ -47,7 +47,7 @@ class MensShoesController extends AbstractController
 
         if($request->get('ajax')){
             return new JsonResponse([
-                'content' => $this->renderView('product/content.html.twig', compact('product'))
+                'content' => $this->renderView('product/content.html.twig', compact('product', 'isShoes'))
             ]);
         }
         
@@ -68,7 +68,7 @@ class MensShoesController extends AbstractController
 
         if($request->get('ajax')){
             return new JsonResponse([
-                'content' => $this->renderView('product/content.html.twig', compact('product'))
+                'content' => $this->renderView('product/content.html.twig', compact('product', 'isShoes'))
             ]);
         }
         
@@ -89,7 +89,7 @@ class MensShoesController extends AbstractController
 
         if($request->get('ajax')){
             return new JsonResponse([
-                'content' => $this->renderView('product/content.html.twig', compact('product'))
+                'content' => $this->renderView('product/content.html.twig', compact('product', 'isShoes'))
             ]);
         }
         
