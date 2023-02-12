@@ -7,6 +7,17 @@
     min-height: 120vh;
     margin-top: 110px;
 }
+#about .abt-banner{
+  width: 100%;
+  height: 400px;
+  display: grid;
+  place-items: center;
+  background: url('../img/about-banner.jpg') center center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 #about .abt-banner .abt-title-container{
     width: 50%;
     height: 200px;
