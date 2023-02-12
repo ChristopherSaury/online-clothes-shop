@@ -75,6 +75,7 @@
     background-color: #e9eaeb;
     border: none;
     border-bottom: 1px solid black;
+    color: #000 !important;
     padding: 4% 4% 4% 1%;
     text-align: left;
     cursor: pointer;
@@ -92,6 +93,10 @@
 }
 .mobile-menu .menu-accordion .panel li{
     padding: 10% 0;
+}
+.mobile-menu .menu-accordion .panel li a{
+    text-decoration: none;
+    color: #000 !important;
 }
 /************************ DESKTOP NAV ************************************/
 #desktop{
@@ -393,6 +398,7 @@ footer .f-nsl-form form input{
     margin-top: 4%;
     padding: 3%;
     width: 60%;
+    border-radius: 0px;
 }
 footer .f-nsl-form form input:focus{
     outline: none;
@@ -404,6 +410,8 @@ footer .f-nsl-form form button{
     border-radius: 0%;
     border: 2px solid #fff;
     cursor: pointer;
+    background-color: #f0f0f0;
+    color: #000;
 
 }
 footer .f-nsl-form form{
@@ -506,7 +514,7 @@ footer .f-contact-container{
 footer .f-contact-container .f-contact-row{
     width: 100%;
     height: auto;
-    color: #fff;
+    color: #fff !important;
     display: flex;
     flex-direction: row;
     gap: 10px;
