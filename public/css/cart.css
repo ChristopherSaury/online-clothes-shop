@@ -121,11 +121,24 @@
     gap: 5px;
     height: 30px;
 }
+#shopping-cart .sc-content .sc-container .sc-product .sc-action span a{
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    color: #fff;
+}
 #shopping-cart .sc-content .sc-container .sc-product .sc-action button{
     cursor: pointer;
-    width: 30px ;
-    height: 30px;
+    display: grid;
+    place-items: center;
+    width: 100% ;
+    height: 100%;
     font-size: 15px;
+    background-color: #28292b;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+
 }
 #shopping-cart .modal-msg{
     width: 100%;
